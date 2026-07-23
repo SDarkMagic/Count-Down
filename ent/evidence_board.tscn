@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://tyfxpy7htrlr"]
+
+[ext_resource type="Script" uid="uid://ggukybl3b7ut" path="res://script/evidence_board.gd" id="1_61jst"]
+[ext_resource type="PackedScene" uid="uid://ctj0iovhvb3gx" path="res://ent/evidence_board_display.tscn" id="3_af7b8"]
+[ext_resource type="ArrayMesh" uid="uid://drrywbqb1lfxw" path="res://mdl/folder.res" id="4_cm60o"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cm60o"]
+viewport_path = NodePath("SubViewport")
+
+[node name="EvidenceBoard" type="Node3D" unique_id=74119123]
+script = ExtResource("1_61jst")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2056873998]
+size = Vector2i(1080, 720)
+
+[node name="EvidenceBoardDisplay" parent="SubViewport" unique_id=707370701 instance=ExtResource("3_af7b8")]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=474861566]
+transform = Transform3D(0.138, 0, 0, 0, 0.135, 0, 0, 0, 1, -0.21162903, 0.044442132, 0.0058462955)
+texture = SubResource("ViewportTexture_cm60o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=714718547]
+transform = Transform3D(3.1, 0, 0, 0, 3.1, 0, 0, 0, 1, 0, 0, -0.001)
+mesh = ExtResource("4_cm60o")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=652786881]

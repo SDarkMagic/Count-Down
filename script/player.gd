@@ -11,6 +11,7 @@ var t_bob: float = 0.0
 
 # fov variables
 @export var base_fov: float = 110.0
+@onready var current_fov: float = base_fov
 var fov_change: float = 1.5
 
 # speed variables
@@ -20,6 +21,7 @@ var fov_change: float = 1.5
 
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
+@onready var in_evidence: bool = false
 
 func _ready() -> void:
 	camera.fov = base_fov
@@ -27,14 +29,26 @@ func _ready() -> void:
 	%InteractShapecast3D.add_exception($".")
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and not in_evidence:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(40))
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed('open_evidence'):
+		if in_evidence:
+			%EvidenceBoard.hide()
+			current_fov = base_fov
+			in_evidence = false
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		else:
+			%EvidenceBoard.show()
+			current_fov = 75.0
+			in_evidence = true
+			Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+		
 	var interactable: InteractableComponent = get_interactable_component_at_shapecast()
-	if interactable:
+	if interactable and not in_evidence:
 		interactable.hover_cursor(self)
 		if Input.is_action_just_pressed('interact'):
 			interactable.interact_with()
@@ -67,7 +81,7 @@ func _physics_process(delta: float) -> void:
 	
 	# FOV
 	var velocity_clamped: float = clamp(velocity.length(), 0.5, sprint_speed * 2)
-	var target_fov: float = base_fov + fov_change * velocity_clamped
+	var target_fov: float = current_fov + fov_change * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 
 	move_and_slide()

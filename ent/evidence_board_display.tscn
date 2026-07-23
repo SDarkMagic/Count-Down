@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ctj0iovhvb3gx"]
+
+[ext_resource type="PackedScene" uid="uid://dhtmgu2k5j7de" path="res://ent/evidence_card.tscn" id="1_3tc2g"]
+
+[node name="EvidenceBoardDisplay" type="Control" unique_id=707370701]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1664289289]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1948674215]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1913080311]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=271497685]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=347092337]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EvidenceCard" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=726009956 instance=ExtResource("1_3tc2g")]
+layout_mode = 2
+text = "some evidence"
