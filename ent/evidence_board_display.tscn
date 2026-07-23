@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ctj0iovhvb3gx"]
 
 [ext_resource type="PackedScene" uid="uid://dhtmgu2k5j7de" path="res://ent/evidence_card.tscn" id="1_3tc2g"]
+[ext_resource type="Script" uid="uid://d2r8ps5b1kcyu" path="res://script/evidence_board_display.gd" id="1_mnyor"]
 
 [node name="EvidenceBoardDisplay" type="Control" unique_id=707370701]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mnyor")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1664289289]
 layout_mode = 1
@@ -43,4 +45,3 @@ size_flags_horizontal = 3
 
 [node name="EvidenceCard" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=726009956 instance=ExtResource("1_3tc2g")]
 layout_mode = 2
-text = "some evidence"

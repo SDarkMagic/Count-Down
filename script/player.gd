@@ -5,8 +5,8 @@ const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.02
 
 # view-bob variables
-const BOB_FREQ: float = 2.0
-const BOB_AMP: float = 0.008
+const BOB_FREQ: float = 2.1
+const BOB_AMP: float = 0.006
 var t_bob: float = 0.0
 
 # fov variables

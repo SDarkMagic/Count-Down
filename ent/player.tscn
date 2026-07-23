@@ -13,9 +13,6 @@ radius = 0.25
 
 [node name="Player" type="CharacterBody3D" unique_id=609331952]
 script = ExtResource("1_jgavj")
-base_fov = null
-walk_speed = null
-sprint_speed = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1412099602]
 mesh = SubResource("CapsuleMesh_8m5ey")
@@ -38,4 +35,3 @@ collide_with_areas = true
 [node name="EvidenceBoard" parent="Head/Camera3D" unique_id=74119123 instance=ExtResource("2_0xrom")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20710146, -0.048896253, -0.724209)
-visible = false

@@ -32,5 +32,8 @@ size = Vector3(40, 1, 40)
 
 [node name="Player" parent="." unique_id=966775029 instance=ExtResource("1_inxrk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+base_fov = 110.0
+walk_speed = 5.0
+sprint_speed = 10.0
 
 [node name="LevelManager" parent="." unique_id=427168039 instance=ExtResource("2_irw7f")]

@@ -2,47 +2,18 @@
 
 [ext_resource type="Script" uid="uid://dt2eddtgyr134" path="res://script/evidence_card.gd" id="1_wl8mo"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_wl8mo"]
-font_color = Color(0, 0, 0, 1)
-
-[node name="EvidenceCard" type="Control" unique_id=726009956]
+[node name="EvidenceCard" type="Button" unique_id=1141990916]
 custom_minimum_size = Vector2(25, 15)
-layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -12.5
-offset_top = -7.5
-offset_right = 12.5
-offset_bottom = 7.5
+offset_left = -540.0
+offset_top = -360.0
+offset_right = -445.0
+offset_bottom = -329.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "test button"
 script = ExtResource("1_wl8mo")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1705262563]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect" unique_id=1093194385]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="NinePatchRect/MarginContainer" unique_id=1621359893]
-unique_name_in_owner = true
-clip_contents = true
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Test"
-label_settings = SubResource("LabelSettings_wl8mo")
