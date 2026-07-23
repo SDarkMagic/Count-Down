@@ -24,12 +24,20 @@ var fov_change: float = 1.5
 func _ready() -> void:
 	camera.fov = base_fov
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	%InteractShapecast3D.add_exception($".")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(40))
+
+func _process(delta: float) -> void:
+	var interactable: InteractableComponent = get_interactable_component_at_shapecast()
+	if interactable:
+		interactable.hover_cursor(self)
+		if Input.is_action_just_pressed('interact'):
+			interactable.interact_with()
 
 func _physics_process(delta: float) -> void:
 	var speed: float
@@ -69,3 +77,13 @@ func _headbob(time: float) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+func get_interactable_component_at_shapecast() -> InteractableComponent:
+	for i in %InteractShapecast3D.get_collision_count():
+		if i > 0 and %InteractShapecast3D.get_collider(0) != $'.':
+			return null
+		var object = %InteractShapecast3D.get_collider(i).get_node_or_null("InteractableComponent")
+		if object is InteractableComponent:
+			return object
+	return null
+		
