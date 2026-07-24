@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c68ninjoyj3yw"]
+
+[ext_resource type="Script" uid="uid://clcqlxp4k25xy" path="res://ent/mad_lib.gd" id="1_bji7e"]
+
+[node name="MadLib" type="Control" unique_id=317813038]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bji7e")

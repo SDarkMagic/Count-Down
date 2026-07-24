@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dhtmgu2k5j7de" path="res://ent/evidence_card.tscn" id="1_3tc2g"]
 [ext_resource type="Script" uid="uid://d2r8ps5b1kcyu" path="res://script/evidence_board_display.gd" id="1_mnyor"]
+[ext_resource type="PackedScene" uid="uid://c68ninjoyj3yw" path="res://ent/mad_lib.tscn" id="2_fdrd7"]
 
 [node name="EvidenceBoardDisplay" type="Control" unique_id=707370701]
 layout_mode = 3
@@ -38,6 +39,17 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=271497685]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="MadLib" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=317813038 instance=ExtResource("2_fdrd7")]
+custom_minimum_size = Vector2(25, 150)
+layout_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/MadLib" unique_id=1365949305]
+z_index = 1
+layout_mode = 0
+offset_right = 374.0
+offset_bottom = 46.0
+text = "(Drag button here)"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=347092337]
 layout_mode = 2
