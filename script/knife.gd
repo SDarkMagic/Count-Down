@@ -18,4 +18,4 @@ func _process(delta: float) -> void:
 
 
 func _on_interactable_component_interacted() -> void:
-	print("Knife interacted with")
+	$DialogueBox.begin_linear_dialogue()
