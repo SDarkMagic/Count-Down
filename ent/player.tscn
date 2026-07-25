@@ -35,3 +35,4 @@ collide_with_areas = true
 [node name="EvidenceBoard" parent="Head/Camera3D" unique_id=74119123 instance=ExtResource("2_0xrom")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20710146, -0.048896253, -0.724209)
+visible = false

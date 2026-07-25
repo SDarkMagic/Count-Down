@@ -1,17 +1,12 @@
-class_name EvidenceCard
-extends Button
+extends Node
 
-
+signal decrease_time_limit(delta: int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#%Label.text = text
-	return
+	pass # Replace with function body.
 
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-	

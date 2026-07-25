@@ -65,7 +65,6 @@ func _physics_process(delta: float) -> void:
 		speed = walk_speed
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -74,6 +73,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
+
+	if (Input.is_action_pressed('ui_accept')):
+		velocity.y = speed
+	else:
+		velocity.y = move_toward(velocity.y, -9.8, speed)
 
 	# View-bob
 	t_bob += delta * velocity.length() * float(is_on_floor())

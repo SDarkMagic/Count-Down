@@ -3,4 +3,10 @@
 [ext_resource type="Script" uid="uid://b0u4kfphe4w2n" path="res://script/level_manager.gd" id="1_5jdlq"]
 
 [node name="LevelManager" type="Node3D" unique_id=427168039]
+process_mode = 3
 script = ExtResource("1_5jdlq")
+
+[node name="Timer" type="Timer" parent="." unique_id=950343714]
+process_mode = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
