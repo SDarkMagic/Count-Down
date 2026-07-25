@@ -80,8 +80,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, -9.8, speed)
 
 	# View-bob
-	t_bob += delta * velocity.length() * float(is_on_floor())
-	camera.transform.origin = _headbob(t_bob)
+	if direction != Vector3.ZERO:
+		t_bob += delta * velocity.length() * float(is_on_floor())
+		camera.transform.origin = _headbob(t_bob)
 	
 	# FOV
 	var velocity_clamped: float = clamp(velocity.length(), 0.5, sprint_speed * 2)

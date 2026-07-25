@@ -1,6 +1,7 @@
+class_name DialogueBox
 extends MarginContainer
 
-@export var texts: Array[String]
+@export_multiline var texts: Array[String]
 @export var is_visible: bool = false
 @export var time_cost_per_line: int = 1
 
