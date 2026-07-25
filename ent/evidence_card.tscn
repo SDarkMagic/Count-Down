@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dhtmgu2k5j7de"]
 
+[ext_resource type="Theme" uid="uid://bsawtooyh4tde" path="res://ui/evidence_board.theme" id="1_n5bno"]
 [ext_resource type="Script" uid="uid://dt2eddtgyr134" path="res://script/evidence_card.gd" id="1_wl8mo"]
 
 [node name="EvidenceCard" type="Button" unique_id=1141990916]
@@ -15,5 +16,6 @@ offset_right = -445.0
 offset_bottom = -329.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_n5bno")
 text = "test button"
 script = ExtResource("1_wl8mo")

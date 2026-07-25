@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dot8ypsxcd6i4" path="res://ent/player.tscn" id="1_inxrk"]
 [ext_resource type="PackedScene" uid="uid://cdchb5qmvph22" path="res://ent/knife.tscn" id="1_irw7f"]
+[ext_resource type="PackedScene" uid="uid://5alknpv2qo4b" path="res://ent/level_manager.tscn" id="3_k1rd5"]
+[ext_resource type="PackedScene" uid="uid://cvf73phlb04kq" path="res://ent/herring.tscn" id="4_0c144"]
+[ext_resource type="PackedScene" uid="uid://cv6flesil2y2a" path="res://ent/candlestick.tscn" id="5_mpabl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w5efk"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -87,9 +90,6 @@ size = Vector3(1, 19, 15.400001)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5.2627945, -27.99472)
 size = Vector3(34, 1, 6)
 
-[node name="Knife" parent="CSGCombiner3D" unique_id=1980827111 instance=ExtResource("1_irw7f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -23)
-
 [node name="Player" parent="." unique_id=609331952 instance=ExtResource("1_inxrk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.39999998, -6)
 
@@ -99,3 +99,18 @@ environment = SubResource("Environment_xyfw8")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=466158368]
 transform = Transform3D(0.32941183, -0.94299334, -0.047448426, 0.4862956, 0.12637122, 0.864608, -0.8093235, -0.30788603, 0.5002017, -4, 26, 25)
 shadow_enabled = true
+
+[node name="LevelManager" parent="." unique_id=427168039 instance=ExtResource("3_k1rd5")]
+time_limit = 10
+
+[node name="Knife" parent="." unique_id=1655551784 instance=ExtResource("1_irw7f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -21)
+
+[node name="Herring" parent="." unique_id=1175953396 instance=ExtResource("4_0c144")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -18)
+
+[node name="Candlestick" parent="." unique_id=1472738768 instance=ExtResource("5_mpabl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.328154, 0.5008402, -18.415987)
+
+[node name="Knife2" parent="." unique_id=1980827111 instance=ExtResource("1_irw7f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -18)
