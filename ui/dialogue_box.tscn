@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dj66hh3gk5s47" path="res://script/dialogue_box.gd" id="1_2ix3t"]
 [ext_resource type="Texture2D" uid="uid://dtmvo0ubecyqt" path="res://ui/assets/dialogue_box.png" id="2_bode0"]
+[ext_resource type="Theme" uid="uid://bsawtooyh4tde" path="res://ui/evidence_board.theme" id="3_rcpb6"]
 
 [sub_resource type="Animation" id="Animation_bode0"]
 length = 0.001
@@ -231,6 +232,8 @@ theme_override_constants/margin_bottom = 49
 
 [node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/MarginContainer" unique_id=249747011]
 layout_mode = 2
+theme = ExtResource("3_rcpb6")
+text = "test dialogue"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=959226266]
 libraries/ = SubResource("AnimationLibrary_iei5c")

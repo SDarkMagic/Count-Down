@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7u5aj3e0nbcj" path="res://script/player.gd" id="1_jgavj"]
 [ext_resource type="PackedScene" uid="uid://tyfxpy7htrlr" path="res://ent/evidence_board.tscn" id="2_0xrom"]
+[ext_resource type="Shader" uid="uid://b5ptog53u0l54" path="res://addons/color-correction-and-screen-effects_ArseniyMirniy/Materials and Shaders/ScreenEffects_Ultimate.tres" id="3_wbaei"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8m5ey"]
 
@@ -10,6 +11,45 @@ points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jgavj"]
 radius = 0.25
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_irdnn"]
+shader = ExtResource("3_wbaei")
+shader_parameter/Pixelation_Scale = 1.0
+shader_parameter/Panini = 0.0
+shader_parameter/Chromatic_Peripheral = 0.9
+shader_parameter/Chromatic_Aberrations = 0.0
+shader_parameter/Chromatic_Darkening = 0.9
+shader_parameter/Blur_Amount = 0.0
+shader_parameter/Blur_Centered = 0.0
+shader_parameter/Bloom_Starts = 0.9
+shader_parameter/Bloom_Halation = 0.0
+shader_parameter/Bloom_Booster = 0.0
+shader_parameter/Shadows_Split = 0.3
+shader_parameter/Shadow_Color_Temp = 0.0
+shader_parameter/Shadow_Green_Tint = 0.0
+shader_parameter/Shadow_Brightness = 1.0
+shader_parameter/Shadow_Contrast = 1.0
+shader_parameter/Shadows_Saturation = 1.0
+shader_parameter/Highlights_Split = 0.7
+shader_parameter/Mid_Color_Temp = 0.0
+shader_parameter/Mid_Green_Tint = 0.0
+shader_parameter/Mid_Brightness = 1.0
+shader_parameter/Mid_Contrast = 1.0
+shader_parameter/Mid_Saturation = 1.0
+shader_parameter/High_Color_Temp = 0.0
+shader_parameter/High_Green_Tint = 0.0
+shader_parameter/High_Brightness = 1.0
+shader_parameter/High_Contrast = 1.0
+shader_parameter/High_Saturation = 1.0
+shader_parameter/Main_Color_Temp = 4500.0
+shader_parameter/Main_Green_Tint = 0.0
+shader_parameter/Main_Brightness = 1.0
+shader_parameter/Main_Contrast = 1.0
+shader_parameter/Main_Saturation = 1.0
+shader_parameter/Posterization = 0.0
+shader_parameter/Vignette = 0.0
+shader_parameter/Film_Grain = 0.0
+shader_parameter/Filter_Strenght = 0.0
 
 [node name="Player" type="CharacterBody3D" unique_id=609331952]
 script = ExtResource("1_jgavj")
@@ -36,3 +76,14 @@ collide_with_areas = true
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20710146, -0.048896253, -0.724209)
 visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Head/Camera3D" unique_id=254609584]
+
+[node name="ColorRect" type="ColorRect" parent="Head/Camera3D/CanvasLayer" unique_id=1939555823]
+material = SubResource("ShaderMaterial_irdnn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
