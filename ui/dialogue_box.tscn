@@ -190,7 +190,7 @@ _data = {
 &"show_box": SubResource("Animation_rcpb6")
 }
 
-[node name="DialogueBox" type="MarginContainer" unique_id=773324529]
+[node name="DialogueBox" type="MarginContainer" unique_id=135765232]
 process_mode = 2
 visible = false
 anchors_preset = 12
@@ -207,6 +207,7 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 45
 theme_override_constants/margin_bottom = 8
 script = ExtResource("1_2ix3t")
+metadata/_custom_type_script = "uid://dj66hh3gk5s47"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1039137261]
 layout_mode = 2

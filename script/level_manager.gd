@@ -7,6 +7,7 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalSignals.connect('decrease_time_limit', decrease_time_limt)
+	$Timer.start(1.0)
 
 func decrease_time_limt(delta: int) -> void:
 	minutes_remaining -= delta
@@ -19,3 +20,4 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	minutes_remaining -= 1
+	print(minutes_remaining)

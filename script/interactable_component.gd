@@ -1,11 +1,15 @@
 class_name InteractableComponent
 extends Node
 
+@export var can_interact: bool = true
+
 var characters_hovering: Dictionary = {}
 
 signal interacted()
 
 func interact_with() -> void:
+	if not can_interact:
+		return
 	interacted.emit()
 
 # Called when the node enters the scene tree for the first time.
