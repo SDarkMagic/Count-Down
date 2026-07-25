@@ -226,9 +226,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 145
-theme_override_constants/margin_top = 41
+theme_override_constants/margin_top = 51
 theme_override_constants/margin_right = 145
-theme_override_constants/margin_bottom = 49
+theme_override_constants/margin_bottom = 55
 
 [node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/MarginContainer" unique_id=249747011]
 layout_mode = 2

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c7u5aj3e0nbcj" path="res://script/player.gd" id="1_jgavj"]
 [ext_resource type="PackedScene" uid="uid://tyfxpy7htrlr" path="res://ent/evidence_board.tscn" id="2_0xrom"]
 [ext_resource type="Shader" uid="uid://b5ptog53u0l54" path="res://addons/color-correction-and-screen-effects_ArseniyMirniy/Materials and Shaders/ScreenEffects_Ultimate.tres" id="3_wbaei"]
+[ext_resource type="Texture2D" uid="uid://bnn45uwfynrl5" path="res://addons/color-correction-and-screen-effects_ArseniyMirniy/Textures/noise_texture.tres" id="4_irdnn"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8m5ey"]
 
@@ -41,14 +42,15 @@ shader_parameter/High_Green_Tint = 0.0
 shader_parameter/High_Brightness = 1.0
 shader_parameter/High_Contrast = 1.0
 shader_parameter/High_Saturation = 1.0
-shader_parameter/Main_Color_Temp = 4500.0
+shader_parameter/Main_Color_Temp = 4000.0
 shader_parameter/Main_Green_Tint = 0.0
 shader_parameter/Main_Brightness = 1.0
 shader_parameter/Main_Contrast = 1.0
 shader_parameter/Main_Saturation = 1.0
-shader_parameter/Posterization = 0.0
-shader_parameter/Vignette = 0.0
-shader_parameter/Film_Grain = 0.0
+shader_parameter/Posterization = 0.2999999932944
+shader_parameter/Vignette = 0.499999988824
+shader_parameter/Noise = ExtResource("4_irdnn")
+shader_parameter/Film_Grain = 0.6499999854712
 shader_parameter/Filter_Strenght = 0.0
 
 [node name="Player" type="CharacterBody3D" unique_id=609331952]
