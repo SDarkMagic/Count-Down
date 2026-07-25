@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cv6flesil2y2a"]
+
+[ext_resource type="Script" uid="uid://bt43q4wkb151t" path="res://script/evidence_item.gd" id="1_bqq6v"]
+[ext_resource type="ArrayMesh" uid="uid://dp6u4qmcv8ujn" path="res://mdl/candlestick.res" id="2_26kyx"]
+[ext_resource type="Script" uid="uid://cx25gqci25gbj" path="res://script/interactable_component.gd" id="3_fj6ty"]
+[ext_resource type="PackedScene" uid="uid://63w5h8cxnwsf" path="res://ui/dialogue_box.tscn" id="4_kudaq"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rvjdw"]
+points = PackedVector3Array(0.22661904, 0.23812217, 0.0332485, -0.22187617, 0.2308, -0.025553271, -0.06747547, -0.004430115, -0.025553271, -0.0012723738, -0.004430115, 0.077357024, -0.023354705, 0.37779582, 0.055295568, 0.1972052, 0.23812217, -0.054954156, 0.028053664, 0.4512937, -0.025553271, 0.020678254, -0.004430115, -0.069661796, -0.19979385, 0.23812217, 0.055295568, -0.015979294, 0.32635647, -0.062307976, -0.19246234, 0.34104684, -0.010845633, 0.07217442, -0.004430115, -0.025553271, 0.17507897, 0.2969297, 0.055295568, -0.0012723738, 0.4586619, 0.0332485, -0.18508692, 0.23812217, -0.054954156, 0.1972052, 0.33367863, 0.018540861, 0.020678254, 0.32635647, 0.070003204, -0.060100056, -0.004430115, 0.04058793, 0.07217442, -0.004430115, 0.0332485, 0.18249828, 0.2308, 0.062649384, -0.015979294, 0.4512937, -0.025553271, 0.18978588, 0.2969297, -0.04760034, 0.22661904, 0.2308, -0.025553271, -0.17775542, 0.34104684, 0.0332485, -0.038061626, -0.004430115, -0.062307976, -0.22187617, 0.2308, 0.025894681, -0.18508692, 0.2969297, -0.04760034, -0.17775542, 0.2308, 0.062649384, 0.050092094, -0.004430115, 0.062649384, 0.013346744, 0.37779582, -0.054954156, 0.028053664, 0.46603012, 0.018540861, 0.18249828, 0.34104684, -0.025553271)
+
+[node name="Candlestick" type="StaticBody3D" unique_id=1500529330 node_paths=PackedStringArray("interactable_component", "dialogue_box")]
+script = ExtResource("1_bqq6v")
+model_node_path = "MeshInstance3D"
+interactable_component = NodePath("InteractableComponent")
+materials_to_outline = Array[int]([0, 1])
+dialogue_box = NodePath("DialogueBox")
+metadata/_custom_type_script = "uid://bt43q4wkb151t"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=80165982]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = ExtResource("2_26kyx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=219657036]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_rvjdw")
+
+[node name="InteractableComponent" type="Node" parent="." unique_id=1776150319]
+script = ExtResource("3_fj6ty")
+metadata/_custom_type_script = "uid://cx25gqci25gbj"
+
+[node name="DialogueBox" parent="." unique_id=773324529 instance=ExtResource("4_kudaq")]
+texts = Array[String](["Found in the foyer. A typical three pronged candelabra.", "The three candles it's holding are pretty well-used and are almost burned out."])
+
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interactable_component_interacted"]

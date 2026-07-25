@@ -5,6 +5,7 @@ extends StaticBody3D
 @export var interactable_component: InteractableComponent
 @export var materials_to_outline: Array[int]
 @export var dialogue_box: DialogueBox
+@export var evidence_board_key: StringName
 @onready var outline_shader = preload("res://mdl/mtrl/outline.tres")
 @onready var model_node: MeshInstance3D = get_node(model_node_path)
 

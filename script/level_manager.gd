@@ -15,7 +15,9 @@ func decrease_time_limt(delta: int) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if minutes_remaining <= 0:
-		print('Time up')
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		get_tree().paused = true
+		$CanvasLayer.show()
 
 
 func _on_timer_timeout() -> void:
