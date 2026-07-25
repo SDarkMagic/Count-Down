@@ -15,5 +15,6 @@ offset_right = -445.0
 offset_bottom = -329.0
 grow_horizontal = 2
 grow_vertical = 2
+button_mask = 0
 text = "test button"
 script = ExtResource("1_wl8mo")
