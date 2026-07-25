@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c68ninjoyj3yw"]
 
-[ext_resource type="Script" uid="uid://clcqlxp4k25xy" path="res://ent/mad_lib.gd" id="1_bji7e"]
+[ext_resource type="Script" uid="uid://clcqlxp4k25xy" path="res://script/mad_lib.gd" id="1_bji7e"]
 
 [node name="MadLib" type="RichTextLabel" unique_id=1840590631]
 offset_right = 1.0

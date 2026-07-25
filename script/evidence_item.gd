@@ -28,4 +28,5 @@ func _process(delta: float) -> void:
 
 func _on_interactable_component_interacted() -> void:
 	dialogue_box.begin_linear_dialogue()
+	GlobalSignals.emit_signal('find_evidence', evidence_board_key)
 	interactable_component.can_interact = false

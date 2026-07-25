@@ -2,6 +2,9 @@ class_name EvidenceCard
 extends Button
 signal is_dragged(EvidenceCard)
 
+@export var evidence_key: StringName
+@export var positive_evidence_color: Color
+@export var negative_evidence_color: Color
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

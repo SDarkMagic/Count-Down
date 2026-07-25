@@ -14,6 +14,7 @@ model_node_path = "MeshInstance3D"
 interactable_component = NodePath("InteractableComponent")
 materials_to_outline = Array[int]([0, 1])
 dialogue_box = NodePath("DialogueBox")
+evidence_board_key = &"knife"
 metadata/_custom_type_script = "uid://bt43q4wkb151t"
 
 [node name="InteractableComponent" type="Node" parent="." unique_id=763941121]

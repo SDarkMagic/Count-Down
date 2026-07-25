@@ -1,6 +1,7 @@
 extends Node
 
 signal decrease_time_limit(delta: int)
+signal find_evidence(key: StringName)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
