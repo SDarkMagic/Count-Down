@@ -24,122 +24,38 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_c5fpn")
 
-[node name="EvidenceCard" parent="ColorRect" unique_id=1141990916 instance=ExtResource("1_3tc2g")]
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect" unique_id=1530585407]
 layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 1048.0
-offset_top = 216.0
-offset_right = 1518.0
-offset_bottom = 288.0
-grow_horizontal = 1
-grow_vertical = 1
-text = "painting of the count"
-evidence_key = &"painting of the count"
+offset_left = 40.0
+offset_top = 72.0
+offset_right = 976.0
+offset_bottom = 1024.0
+theme_override_constants/margin_left = -15
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 40
 
-[node name="EvidenceCard2" parent="ColorRect" unique_id=1779137695 instance=ExtResource("1_3tc2g")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 1152.0
-offset_top = 304.0
-offset_right = 1622.0
-offset_bottom = 376.0
-grow_horizontal = 1
-grow_vertical = 1
-text = "red herring"
-evidence_key = &"red herring"
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer2" unique_id=1130206007]
+layout_mode = 2
+theme_override_constants/separation = 15
 
-[node name="EvidenceCard3" parent="ColorRect" unique_id=736911243 instance=ExtResource("1_3tc2g")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 1104.0
-offset_top = 400.0
-offset_right = 1574.0
-offset_bottom = 472.0
-grow_horizontal = 1
-grow_vertical = 1
-text = "clump of brown fur"
-evidence_key = &"clump of brown fur"
+[node name="Control" type="Control" parent="ColorRect/MarginContainer2/VBoxContainer" unique_id=479207306]
+layout_mode = 2
 
-[node name="EvidenceCard4" parent="ColorRect" unique_id=1054556280 instance=ExtResource("1_3tc2g")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 1160.0
-offset_top = 496.0
-offset_right = 1630.0
-offset_bottom = 568.0
-grow_horizontal = 1
-grow_vertical = 1
-text = "glass of red wine"
-evidence_key = &"glass of red wine"
-
-[node name="EvidenceCard5" parent="ColorRect" unique_id=1845101235 instance=ExtResource("1_3tc2g")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 1112.0
-offset_top = 600.0
-offset_right = 1582.0
-offset_bottom = 672.0
-grow_horizontal = 1
-grow_vertical = 1
-text = "candelabra"
-evidence_key = &"candelabra"
-
-[node name="EvidenceCard6" parent="ColorRect" unique_id=416778645 instance=ExtResource("1_3tc2g")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 1192.0
-offset_top = 696.0
-offset_right = 1662.0
-offset_bottom = 768.0
-grow_horizontal = 1
-grow_vertical = 1
-text = "kitchen knife"
-evidence_key = &"kitchen knife"
-
-[node name="Control" type="Control" parent="ColorRect" unique_id=479207306]
-anchors_preset = 0
-offset_left = 24.0
-offset_top = 128.0
-offset_right = 80.0
-offset_bottom = 152.0
-
-[node name="MadLib2" parent="ColorRect/Control" unique_id=1840590631 instance=ExtResource("2_fdrd7")]
+[node name="MadLib2" parent="ColorRect/MarginContainer2/VBoxContainer/Control" unique_id=1840590631 instance=ExtResource("2_fdrd7")]
 custom_minimum_size = Vector2(25, 15)
 layout_mode = 0
-offset_left = 640.0
-offset_top = 176.0
-offset_right = 1032.0
-offset_bottom = 272.0
+offset_left = 64.0
+offset_top = 216.0
+offset_right = 559.0
+offset_bottom = 300.0
 theme = ExtResource("3_7a7xl")
 theme_type_variation = &"MadLib"
-text = "__________"
+text = "______________________"
+vertical_alignment = 1
 correct_answer = &"clump of brown fur"
 
-[node name="Label3" type="Label" parent="ColorRect/Control" unique_id=1310776268]
+[node name="Label3" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control" unique_id=1310776268]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 176.0
@@ -148,168 +64,222 @@ offset_bottom = 224.0
 theme = ExtResource("3_7a7xl")
 text = "Something I did find was a"
 
-[node name="Label6" type="Label" parent="ColorRect/Control" unique_id=144831801]
+[node name="Label6" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control" unique_id=144831801]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 232.0
-offset_right = 1188.0
-offset_bottom = 280.0
+offset_left = 63.0
+offset_top = 286.0
+offset_right = 1187.0
+offset_bottom = 334.0
 theme = ExtResource("3_7a7xl")
-text = "which doesn't belong to the count. So,"
+text = "belong to the count. So, why is "
 
-[node name="Label7" type="Label" parent="ColorRect/Control" unique_id=1297701884]
+[node name="Label7" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control" unique_id=1297701884]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 288.0
-offset_right = 1188.0
-offset_bottom = 336.0
+offset_left = 63.0
+offset_top = 326.0
+offset_right = 1187.0
+offset_bottom = 374.0
 theme = ExtResource("3_7a7xl")
-text = "why is it here? "
+text = "it here? "
 
-[node name="Label5" type="Label" parent="ColorRect/Control" unique_id=2131139189]
+[node name="Label5" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control" unique_id=2131139189]
 layout_mode = 0
-offset_left = 856.0
-offset_top = 184.0
-offset_right = 880.0
-offset_bottom = 232.0
+offset_left = 551.0
+offset_top = 230.0
+offset_right = 898.0
+offset_bottom = 278.0
 theme = ExtResource("3_7a7xl")
-text = ","
+text = ", which doesn't "
 
-[node name="EvidenceCard7" parent="ColorRect" unique_id=726009956 instance=ExtResource("1_3tc2g")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 1176.0
-offset_top = 136.0
-offset_right = 1646.0
-offset_bottom = 208.0001
-grow_horizontal = 1
-grow_vertical = 1
-evidence_key = &"body"
+[node name="Control2" type="Control" parent="ColorRect/MarginContainer2/VBoxContainer" unique_id=1240971232]
+layout_mode = 2
 
-[node name="Label8" type="Label" parent="ColorRect" unique_id=1757143022]
-layout_mode = 0
-offset_left = 88.0
-offset_top = 536.0
-offset_right = 1212.0
-offset_bottom = 584.0
-theme = ExtResource("3_7a7xl")
-text = "Another thing I found was a"
-
-[node name="MadLib3" parent="ColorRect" unique_id=1778905151 instance=ExtResource("2_fdrd7")]
+[node name="MadLib" parent="ColorRect/MarginContainer2/VBoxContainer/Control2" unique_id=317813038 instance=ExtResource("2_fdrd7")]
 custom_minimum_size = Vector2(25, 15)
 layout_mode = 0
-offset_left = 688.0
-offset_top = 536.0
-offset_right = 1080.0
-offset_bottom = 632.0
+offset_left = 287.0
+offset_top = 23.0
+offset_right = 783.0
+offset_bottom = 95.0
 theme = ExtResource("3_7a7xl")
-theme_type_variation = &"MadLib"
-text = "_________"
-correct_answer = &"glass of red wine"
-
-[node name="Label9" type="Label" parent="ColorRect" unique_id=1360850266]
-layout_mode = 0
-offset_left = 880.0
-offset_top = 544.0
-offset_right = 904.0
-offset_bottom = 592.0
-theme = ExtResource("3_7a7xl")
-text = ","
-
-[node name="Label10" type="Label" parent="ColorRect" unique_id=1711352997]
-layout_mode = 0
-offset_left = 88.0
-offset_top = 592.0
-offset_right = 1212.0
-offset_bottom = 640.0
-theme = ExtResource("3_7a7xl")
-text = "which by itself isn't inherently "
-
-[node name="Label11" type="Label" parent="ColorRect" unique_id=280207328]
-layout_mode = 0
-offset_left = 88.0
-offset_top = 640.0
-offset_right = 880.0
-offset_bottom = 688.0
-theme = ExtResource("3_7a7xl")
-text = "suspicious, but I wonder if there's"
-
-[node name="ConclusionLabel1" type="Label" parent="ColorRect" unique_id=1226818767]
-visible = false
-layout_mode = 0
-offset_left = 88.0
-offset_top = 840.0
-offset_right = 1234.0
-offset_bottom = 888.0
-theme = ExtResource("3_7a7xl")
-text = "Therefore: Maybe the count is still "
-
-[node name="ConclusionLabel2" type="Label" parent="ColorRect" unique_id=424427339]
-visible = false
-layout_mode = 0
-offset_left = 88.0
-offset_top = 888.0
-offset_right = 1234.0
-offset_bottom = 936.0
-theme = ExtResource("3_7a7xl")
-text = "alive and in the house with me..."
-
-[node name="Control2" type="Control" parent="ColorRect" unique_id=1240971232]
-anchors_preset = 0
-offset_left = 24.0
-offset_top = 112.0
-offset_right = 64.0
-offset_bottom = 168.0
-
-[node name="MadLib" parent="ColorRect/Control2" unique_id=317813038 instance=ExtResource("2_fdrd7")]
-custom_minimum_size = Vector2(25, 15)
-layout_mode = 0
-offset_left = 336.0
-offset_top = 72.0
-offset_right = 512.0
-offset_bottom = 168.0
-theme = ExtResource("3_7a7xl")
-text = "_______"
+text = "__________________"
+vertical_alignment = 1
 correct_answer = &"body"
 
-[node name="Label2" type="Label" parent="ColorRect/Control2" unique_id=1466498559]
+[node name="Label2" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control2" unique_id=1466498559]
 layout_mode = 0
-offset_left = 496.0
-offset_top = 72.0
-offset_right = 936.0
-offset_bottom = 120.0
+offset_left = 743.0
+offset_top = 47.0
+offset_right = 1191.0
+offset_bottom = 95.0
 theme = ExtResource("3_7a7xl")
-text = "that I could find. "
+text = "that I "
 
-[node name="Label" type="Label" parent="ColorRect/Control2" unique_id=281666913]
+[node name="Label" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control2" unique_id=281666913]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 72.0
-offset_right = 393.0
-offset_bottom = 120.0
+offset_left = 63.0
+offset_top = 47.0
+offset_right = 392.0
+offset_bottom = 95.0
 theme = ExtResource("3_7a7xl")
 text = "there was no "
 
-[node name="Label4" type="Label" parent="ColorRect/Control2" unique_id=804331602]
+[node name="Label4" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control2" unique_id=804331602]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 16.0
-offset_right = 885.0
-offset_bottom = 64.0
+offset_left = 63.0
+offset_top = -1.0
+offset_right = 884.0
+offset_bottom = 47.0
 theme = ExtResource("3_7a7xl")
 text = "This is a peculiar case. First of all,"
 
-[node name="Label12" type="Label" parent="ColorRect" unique_id=316267700]
+[node name="Label3" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control2" unique_id=611506107]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 688.0
-offset_right = 880.0
-offset_bottom = 736.0
+offset_left = 63.0
+offset_top = 87.0
+offset_right = 503.0
+offset_bottom = 135.0
 theme = ExtResource("3_7a7xl")
-text = "more to it than how it appears..."
+text = "could find. "
 
-[connection signal="is_dragged" from="ColorRect/EvidenceCard7" to="ColorRect/Control2/MadLib" method="_on_evidence_card_is_dragged"]
+[node name="Control3" type="Control" parent="ColorRect/MarginContainer2/VBoxContainer" unique_id=412925627]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control3" unique_id=1757143022]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 366.0
+offset_right = 1187.0
+offset_bottom = 414.0
+theme = ExtResource("3_7a7xl")
+text = "Another thing I found was a"
+
+[node name="MadLib3" parent="ColorRect/MarginContainer2/VBoxContainer/Control3" unique_id=1778905151 instance=ExtResource("2_fdrd7")]
+custom_minimum_size = Vector2(25, 15)
+layout_mode = 0
+offset_left = 39.0
+offset_top = 406.0
+offset_right = 535.0
+offset_bottom = 486.0
+theme = ExtResource("3_7a7xl")
+theme_type_variation = &"MadLib"
+text = "_____________________"
+vertical_alignment = 1
+correct_answer = &"glass of red wine"
+
+[node name="Label9" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control3" unique_id=1360850266]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 430.0
+offset_right = 967.0
+offset_bottom = 478.0
+theme = ExtResource("3_7a7xl")
+text = ", which by itself "
+
+[node name="Label11" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control3" unique_id=280207328]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 478.0
+offset_right = 1048.0
+offset_bottom = 526.0
+theme = ExtResource("3_7a7xl")
+text = "isn't inherently suspicious, but I "
+
+[node name="Label12" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control3" unique_id=316267700]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 526.0
+offset_right = 941.0
+offset_bottom = 574.0
+theme = ExtResource("3_7a7xl")
+text = "wonder if there's more to it than "
+
+[node name="Label13" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control3" unique_id=178374915]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 566.0
+offset_right = 949.0
+offset_bottom = 614.0
+theme = ExtResource("3_7a7xl")
+text = "how it appears..."
+
+[node name="Control4" type="Control" parent="ColorRect/MarginContainer2/VBoxContainer" unique_id=1100299204]
+layout_mode = 2
+
+[node name="ConclusionLabel2" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control4" unique_id=424427339]
+visible = false
+layout_mode = 0
+offset_left = 63.0
+offset_top = 754.0
+offset_right = 1209.0
+offset_bottom = 802.0
+theme = ExtResource("3_7a7xl")
+text = "alive and in the house with me..."
+
+[node name="ConclusionLabel1" type="Label" parent="ColorRect/MarginContainer2/VBoxContainer/Control4" unique_id=1226818767]
+visible = false
+layout_mode = 0
+offset_left = 63.0
+offset_top = 706.0
+offset_right = 1209.0
+offset_bottom = 754.0
+theme = ExtResource("3_7a7xl")
+text = "Therefore: Maybe the count is still "
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect" unique_id=669337731]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 80.0
+offset_right = 1864.0
+offset_bottom = 1024.0
+theme_override_constants/margin_left = 130
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 130
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer3" unique_id=539716753]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="EvidenceCard" parent="ColorRect/MarginContainer3/VBoxContainer" unique_id=1141990916 instance=ExtResource("1_3tc2g")]
+custom_minimum_size = Vector2(25, 72)
+layout_mode = 2
+text = "painting of the count"
+evidence_key = &"painting of the count"
+
+[node name="EvidenceCard2" parent="ColorRect/MarginContainer3/VBoxContainer" unique_id=1779137695 instance=ExtResource("1_3tc2g")]
+custom_minimum_size = Vector2(25, 72)
+layout_mode = 2
+text = "red herring"
+evidence_key = &"red herring"
+
+[node name="EvidenceCard3" parent="ColorRect/MarginContainer3/VBoxContainer" unique_id=736911243 instance=ExtResource("1_3tc2g")]
+custom_minimum_size = Vector2(25, 72)
+layout_mode = 2
+text = "clump of brown fur"
+evidence_key = &"clump of brown fur"
+
+[node name="EvidenceCard4" parent="ColorRect/MarginContainer3/VBoxContainer" unique_id=1054556280 instance=ExtResource("1_3tc2g")]
+custom_minimum_size = Vector2(25, 72)
+layout_mode = 2
+text = "glass of red wine"
+evidence_key = &"glass of red wine"
+
+[node name="EvidenceCard5" parent="ColorRect/MarginContainer3/VBoxContainer" unique_id=1845101235 instance=ExtResource("1_3tc2g")]
+custom_minimum_size = Vector2(25, 72)
+layout_mode = 2
+text = "candelabra"
+evidence_key = &"candelabra"
+
+[node name="EvidenceCard6" parent="ColorRect/MarginContainer3/VBoxContainer" unique_id=416778645 instance=ExtResource("1_3tc2g")]
+custom_minimum_size = Vector2(25, 72)
+layout_mode = 2
+text = "kitchen knife"
+evidence_key = &"kitchen knife"
+
+[node name="EvidenceCard7" parent="ColorRect/MarginContainer3/VBoxContainer" unique_id=726009956 instance=ExtResource("1_3tc2g")]
+custom_minimum_size = Vector2(25, 72)
+layout_mode = 2
+evidence_key = &"body"
+
+[connection signal="is_dragged" from="ColorRect/MarginContainer3/VBoxContainer/EvidenceCard7" to="ColorRect/MarginContainer2/VBoxContainer/Control2/MadLib" method="_on_evidence_card_is_dragged"]
