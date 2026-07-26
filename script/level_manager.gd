@@ -15,12 +15,25 @@ func decrease_time_limt(delta: int) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	GlobalSignals.emit_signal('update_clock', minutes_remaining, time_limit)
+	GlobalSignals.connect('win_game', win)
 	if minutes_remaining <= 0:
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		get_tree().paused = true
-		GlobalSignals.emit_signal('hide_overlays')
-		$CanvasLayer.show()
+		game_over()
 
+func game_over() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_tree().paused = true
+	GlobalSignals.emit_signal('hide_overlays')
+	$CanvasLayer/Win.hide()
+	$CanvasLayer.show()
+	$CanvasLayer/GameOver.show()
+
+func win() -> void:
+	get_tree().paused = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	GlobalSignals.emit_signal('hide_overlays')
+	$CanvasLayer/GameOver.hide()
+	$CanvasLayer/Win.show()
+	$CanvasLayer.show()
 
 func _on_timer_timeout() -> void:
 	minutes_remaining -= 1

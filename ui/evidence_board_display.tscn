@@ -137,6 +137,7 @@ offset_bottom = 272.0
 theme = ExtResource("3_7a7xl")
 theme_type_variation = &"MadLib"
 text = "__________"
+correct_answer = &"clump of brown fur"
 
 [node name="Label3" type="Label" parent="ColorRect/Control" unique_id=1310776268]
 layout_mode = 0
@@ -187,6 +188,7 @@ offset_right = 1646.0
 offset_bottom = 208.0001
 grow_horizontal = 1
 grow_vertical = 1
+evidence_key = &"body"
 
 [node name="Label8" type="Label" parent="ColorRect" unique_id=1757143022]
 layout_mode = 0
@@ -207,6 +209,7 @@ offset_bottom = 632.0
 theme = ExtResource("3_7a7xl")
 theme_type_variation = &"MadLib"
 text = "_________"
+correct_answer = &"glass of red wine"
 
 [node name="Label9" type="Label" parent="ColorRect" unique_id=1360850266]
 layout_mode = 0
@@ -271,6 +274,7 @@ offset_right = 512.0
 offset_bottom = 168.0
 theme = ExtResource("3_7a7xl")
 text = "_______"
+correct_answer = &"body"
 
 [node name="Label2" type="Label" parent="ColorRect/Control2" unique_id=1466498559]
 layout_mode = 0

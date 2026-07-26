@@ -20,7 +20,8 @@ func evidence_found(evidence_key: StringName, is_good_evidence: bool) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	has_won = check_has_won()
+	if check_has_won():
+		GlobalSignals.emit_signal('win_game')
 	#print(has_won)
 
 func check_has_won() -> bool:

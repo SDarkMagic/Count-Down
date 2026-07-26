@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://5alknpv2qo4b"]
 
 [ext_resource type="Script" uid="uid://b0u4kfphe4w2n" path="res://script/level_manager.gd" id="1_5jdlq"]
+[ext_resource type="PackedScene" uid="uid://bsaxopmrth2ko" path="res://ui/win.tscn" id="2_da6f7"]
+[ext_resource type="PackedScene" uid="uid://jyytess7nvl5" path="res://ui/game_over.tscn" id="2_qbwpi"]
 
 [node name="LevelManager" type="Node3D" unique_id=427168039]
 process_mode = 3
@@ -13,37 +15,10 @@ process_mode = 1
 process_mode = 2
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1340176715]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.15487596, 0.154876, 0.15487596, 1)
+[node name="Win" parent="CanvasLayer" unique_id=947997031 instance=ExtResource("2_da6f7")]
+visible = false
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=957590580]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1556780594]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=738989185]
-layout_mode = 2
-text = "Game Over"
-horizontal_alignment = 1
-
-[node name="RestartButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=2376507]
-layout_mode = 2
-text = "Restart"
+[node name="GameOver" parent="CanvasLayer" unique_id=1127285397 instance=ExtResource("2_qbwpi")]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

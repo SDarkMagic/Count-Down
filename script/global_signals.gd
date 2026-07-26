@@ -6,6 +6,7 @@ signal update_clock(time_remaining: int, time_limit: int)
 signal hide_clock()
 signal show_clock()
 signal hide_overlays()
+signal win_game()
 
 func reload_scene():
 	var tree = get_tree()

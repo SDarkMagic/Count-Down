@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bsaxopmrth2ko"]
+
+[ext_resource type="Theme" uid="uid://bsawtooyh4tde" path="res://ui/evidence_board.theme" id="1_t2vi7"]
+[ext_resource type="FontFile" uid="uid://cs26utyo0y4tw" path="res://fnt/JimNightshade-Regular.ttf" id="2_rpslf"]
+[ext_resource type="Script" uid="uid://cowkt33ck8clt" path="res://script/win.gd" id="2_xn20x"]
+
+[node name="Win" type="Control" unique_id=947997031]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t2vi7")
+script = ExtResource("2_xn20x")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1061904626]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=259775990]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.5
+offset_top = -290.0
+offset_right = 346.5
+offset_bottom = 36.000977
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_rpslf")
+theme_override_font_sizes/font_size = 229
+text = "You Win!"
+
+[node name="Button" type="Button" parent="." unique_id=764178024]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = 60.0
+offset_right = 290.00122
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 62
+text = "Exit Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
