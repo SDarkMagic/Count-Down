@@ -25,3 +25,7 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	minutes_remaining -= 1
 	print(minutes_remaining)
+
+
+func _on_restart_button_pressed() -> void:
+	GlobalSignals.reload_scene()

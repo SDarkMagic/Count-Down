@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://borh1iv5figol"]
 
 [ext_resource type="PackedScene" uid="uid://dot8ypsxcd6i4" path="res://ent/player.tscn" id="1_inxrk"]
-[ext_resource type="PackedScene" uid="uid://cdchb5qmvph22" path="res://ent/knife.tscn" id="1_irw7f"]
 [ext_resource type="PackedScene" uid="uid://5alknpv2qo4b" path="res://ent/level_manager.tscn" id="3_k1rd5"]
-[ext_resource type="PackedScene" uid="uid://cvf73phlb04kq" path="res://ent/herring.tscn" id="4_0c144"]
-[ext_resource type="PackedScene" uid="uid://cv6flesil2y2a" path="res://ent/candlestick.tscn" id="5_mpabl"]
-[ext_resource type="PackedScene" uid="uid://d2ts7b735bpg4" path="res://ent/wine.tscn" id="6_ufmbn"]
+[ext_resource type="PackedScene" uid="uid://brbpfnf52lmnq" path="res://ent/painting.tscn" id="4_0c144"]
 [ext_resource type="PackedScene" uid="uid://dvl6kvc3nyjwx" path="res://ent/body_outline.tscn" id="7_3bf4j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w5efk"]
@@ -103,22 +100,10 @@ transform = Transform3D(0.32941183, -0.94299334, -0.047448426, 0.4862956, 0.1263
 shadow_enabled = true
 
 [node name="LevelManager" parent="." unique_id=427168039 instance=ExtResource("3_k1rd5")]
-time_limit = 5
-
-[node name="Knife" parent="." unique_id=1655551784 instance=ExtResource("1_irw7f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -21)
-
-[node name="Herring" parent="." unique_id=1175953396 instance=ExtResource("4_0c144")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -18)
-
-[node name="Candlestick" parent="." unique_id=1472738768 instance=ExtResource("5_mpabl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.328154, 0.5008402, -18.415987)
-
-[node name="Knife2" parent="." unique_id=1980827111 instance=ExtResource("1_irw7f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -18)
-
-[node name="Wine" parent="." unique_id=395280461 instance=ExtResource("6_ufmbn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -17)
+time_limit = 500
 
 [node name="BodyOutline" parent="." unique_id=2035655490 instance=ExtResource("7_3bf4j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39999998, -13)
+
+[node name="Painting" parent="." unique_id=883618739 instance=ExtResource("4_0c144")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -30.4)

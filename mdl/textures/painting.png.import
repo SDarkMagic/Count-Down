@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx3u6ugduovcj"
-path.s3tc="res://.godot/imported/house_CSGCombiner3D2.001.png-666550a267221aebaaf1cdb9f97bb4f0.s3tc.ctex"
+uid="uid://bala2fbaf0plf"
+path.s3tc="res://.godot/imported/painting.png-2cdb526faa11d1bcb4405b406b21a1da.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "bf4ec3b47d8bd9513d460dee2a159eed"
-}
 
 [deps]
 
-source_file="res://mdl/house_CSGCombiner3D2.001.png"
-dest_files=["res://.godot/imported/house_CSGCombiner3D2.001.png-666550a267221aebaaf1cdb9f97bb4f0.s3tc.ctex"]
+source_file="res://mdl/textures/painting.png"
+dest_files=["res://.godot/imported/painting.png-2cdb526faa11d1bcb4405b406b21a1da.s3tc.ctex"]
 
 [params]
 
