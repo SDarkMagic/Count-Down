@@ -16,8 +16,9 @@ viewport_path = NodePath("Sprite3D2/InteractPopup")
 script = ExtResource("1_8ljkj")
 interactable_component = NodePath("InteractableComponent")
 dialogue_box = NodePath("DialogueBox")
-evidence_board_key = &"fur"
+evidence_board_key = &"clump of brown fur"
 interact_prompt_node = NodePath("Sprite3D2")
+is_good_evidence = true
 metadata/_custom_type_script = "uid://bt43q4wkb151t"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1516770828]

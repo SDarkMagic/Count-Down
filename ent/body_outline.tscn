@@ -19,6 +19,7 @@ interactable_component = NodePath("InteractableComponent")
 dialogue_box = NodePath("DialogueBox")
 evidence_board_key = &"body"
 interact_prompt_node = NodePath("Sprite3D2")
+is_good_evidence = true
 metadata/_custom_type_script = "uid://bt43q4wkb151t"
 
 [node name="DialogueBox" parent="." unique_id=135765232 instance=ExtResource("2_e3ceh")]

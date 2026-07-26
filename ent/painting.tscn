@@ -17,7 +17,7 @@ collision_layer = 2
 script = ExtResource("1_bvo8v")
 interactable_component = NodePath("InteractableComponent")
 dialogue_box = NodePath("DialogueBox")
-evidence_board_key = &"painting"
+evidence_board_key = &"painting of the count"
 interact_prompt_node = NodePath("Sprite3D2")
 metadata/_custom_type_script = "uid://bt43q4wkb151t"
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhtmgu2k5j7de"]
 
-[ext_resource type="Theme" uid="uid://bsawtooyh4tde" path="res://ui/evidence_board.theme" id="1_n5bno"]
-[ext_resource type="Script" uid="uid://dt2eddtgyr134" path="res://script/evidence_card.gd" id="1_wl8mo"]
+[ext_resource type="Theme" uid="uid://bsawtooyh4tde" path="res://ui/evidence_board.theme" id="1_i8fk1"]
+[ext_resource type="Script" uid="uid://dt2eddtgyr134" path="res://script/evidence_card.gd" id="2_uxejf"]
 
 [node name="EvidenceCard" type="Button" unique_id=1141990916]
 custom_minimum_size = Vector2(25, 15)
@@ -16,8 +16,8 @@ offset_right = -445.0
 offset_bottom = -329.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_n5bno")
+theme = ExtResource("1_i8fk1")
 text = "body"
-script = ExtResource("1_wl8mo")
+script = ExtResource("2_uxejf")
 positive_evidence_color = Color(0.15058999, 0.74, 0.1406, 1)
 negative_evidence_color = Color(0.73, 0.25550002, 0.25550002, 1)

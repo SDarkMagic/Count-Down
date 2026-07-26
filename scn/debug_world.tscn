@@ -104,6 +104,8 @@ time_limit = 500
 
 [node name="BodyOutline" parent="." unique_id=2035655490 instance=ExtResource("7_3bf4j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39999998, -13)
+is_good_evidence = true
 
 [node name="Painting" parent="." unique_id=883618739 instance=ExtResource("4_0c144")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -30.4)
+evidence_board_key = ""

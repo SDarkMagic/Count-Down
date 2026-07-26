@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b14rmdhsqcikm"]
+
+[ext_resource type="Theme" uid="uid://bsawtooyh4tde" path="res://ui/evidence_board.theme" id="1_bor1v"]
+[ext_resource type="Script" uid="uid://cf8sqyxtcoyqe" path="res://script/title_screen.gd" id="2_dk6f0"]
+[ext_resource type="Texture2D" uid="uid://yb5t8c6aclbi" path="res://ui/assets/title.png" id="2_qer0c"]
+[ext_resource type="PackedScene" uid="uid://btnupt5igcwd3" path="res://scn/house.tscn" id="3_dk6f0"]
+
+[node name="TitleScreen" type="Control" unique_id=377434569]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_bor1v")
+script = ExtResource("2_dk6f0")
+main_scene = ExtResource("3_dk6f0")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1737446756]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2043392952]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1957899147]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_qer0c")
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=580286647]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 172
+text = "Play"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

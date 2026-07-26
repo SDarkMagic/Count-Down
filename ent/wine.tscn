@@ -18,12 +18,13 @@ model_node_path = "MeshInstance3D"
 interactable_component = NodePath("InteractableComponent")
 materials_to_outline = Array[int]([0])
 dialogue_box = NodePath("DialogueBox2")
-evidence_board_key = &"wine"
+evidence_board_key = &"glass of red wine"
+is_good_evidence = true
 metadata/_custom_type_script = "uid://bt43q4wkb151t"
 
 [node name="DialogueBox2" parent="." unique_id=135765232 instance=ExtResource("2_fb5kw")]
 texts = Array[String](["I only found this glass, no bottle.", "It appears to be darker than any red wine I've drunk.", "Not worth the risk of drinking it to be sure it's wine though. Plus that'd be tampering with the evidence."])
-title = "Red Wine"
+title = "Red Wine?"
 time_cost_per_line = 3
 
 [node name="InteractableComponent" type="Node" parent="." unique_id=514529928]

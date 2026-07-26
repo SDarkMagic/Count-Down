@@ -7,6 +7,7 @@ extends StaticBody3D
 @export var dialogue_box: DialogueBox
 @export var evidence_board_key: StringName
 @export var interact_prompt_node: Sprite3D
+@export var is_good_evidence: bool = false
 @onready var outline_shader = preload("res://mdl/mtrl/outline.tres")
 @onready var model_node: MeshInstance3D = get_node(model_node_path) if model_node_path != '' else null
 
@@ -40,5 +41,5 @@ func _handle_interact_popup() -> void:
 
 func _on_interactable_component_interacted() -> void:
 	dialogue_box.begin_linear_dialogue()
-	GlobalSignals.emit_signal('find_evidence', evidence_board_key)
-	interactable_component.can_interact = false
+	GlobalSignals.emit_signal('find_evidence', evidence_board_key, is_good_evidence)
+	#interactable_component.can_interact = false

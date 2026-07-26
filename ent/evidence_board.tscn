@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://ggukybl3b7ut" path="res://script/evidence_board.gd" id="1_61jst"]
 [ext_resource type="AudioStream" uid="uid://dir82vjxea6hw" path="res://snd/evidence_open.ogg" id="2_dr13r"]
 [ext_resource type="AudioStream" uid="uid://buehe5fhussur" path="res://snd/evidence_close.ogg" id="3_0noot"]
-[ext_resource type="PackedScene" uid="uid://ctj0iovhvb3gx" path="res://ent/evidence_board_display.tscn" id="3_af7b8"]
+[ext_resource type="PackedScene" uid="uid://ctj0iovhvb3gx" path="res://ui/evidence_board_display.tscn" id="3_af7b8"]
 [ext_resource type="ArrayMesh" uid="uid://drrywbqb1lfxw" path="res://mdl/folder.res" id="4_cm60o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dr13r"]
+size = Vector3(1.5357895, 0.86206055, 0.0068359375)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_cm60o"]
 viewport_path = NodePath("SubViewport")
@@ -14,13 +17,18 @@ script = ExtResource("1_61jst")
 open_sound = ExtResource("2_dr13r")
 close_sound = ExtResource("3_0noot")
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=2056873998]
-size = Vector2i(1080, 720)
+[node name="Area3D" type="Area3D" parent="." unique_id=1455910396]
+collision_layer = 4
 
-[node name="EvidenceBoardDisplay" parent="SubViewport" unique_id=707370701 instance=ExtResource("3_af7b8")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1628916882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2119484, 0.045043945, -0.0013826042)
+shape = SubResource("BoxShape3D_dr13r")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2056873998]
+size = Vector2i(1920, 1080)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=474861566]
-transform = Transform3D(0.138, 0, 0, 0, 0.135, 0, 0, 0, 1, -0.21162903, 0.044442132, 0.0058462955)
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.5, -0.21162903, 0.044442132, 0.0058462955)
 texture = SubResource("ViewportTexture_cm60o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=714718547]
@@ -33,3 +41,17 @@ mesh = ExtResource("4_cm60o")
 volume_db = -6.0
 max_db = 0.0
 bus = &"Sound Effects"
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=56220212]
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1568754470]
+layer = 3
+visible = false
+
+[node name="EvidenceBoardDisplay" parent="CanvasLayer" unique_id=707370701 instance=ExtResource("3_af7b8")]
+
+[connection signal="mouse_entered" from="Area3D" to="." method="mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="mouse_exited"]

@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://ctj0iovhvb3gx"]
+[gd_scene format=3 uid="uid://dvb1r7ctada82"]
 
-[ext_resource type="PackedScene" uid="uid://dhtmgu2k5j7de" path="res://ent/evidence_card.tscn" id="1_3tc2g"]
+[ext_resource type="PackedScene" uid="uid://dhtmgu2k5j7de" path="res://ui/evidence_card.tscn" id="1_3tc2g"]
 [ext_resource type="Script" uid="uid://d2r8ps5b1kcyu" path="res://script/evidence_board_display.gd" id="1_mnyor"]
 [ext_resource type="Texture2D" uid="uid://bd87tqtsj3pdk" path="res://ui/assets/case_file_background.png" id="2_c5fpn"]
-[ext_resource type="PackedScene" uid="uid://c68ninjoyj3yw" path="res://ent/mad_lib.tscn" id="2_fdrd7"]
+[ext_resource type="PackedScene" uid="uid://c68ninjoyj3yw" path="res://ui/mad_lib.tscn" id="2_fdrd7"]
 [ext_resource type="Theme" uid="uid://bsawtooyh4tde" path="res://ui/evidence_board.theme" id="3_7a7xl"]
 
 [node name="EvidenceBoardDisplay" type="Control" unique_id=707370701]
@@ -20,10 +20,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -24.0
-offset_top = -64.0
-offset_right = -24.0
-offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_c5fpn")
@@ -42,6 +38,7 @@ offset_bottom = 288.0
 grow_horizontal = 1
 grow_vertical = 1
 text = "painting of the count"
+evidence_key = &"painting of the count"
 
 [node name="EvidenceCard2" parent="ColorRect" unique_id=1779137695 instance=ExtResource("1_3tc2g")]
 layout_mode = 0
@@ -57,6 +54,7 @@ offset_bottom = 376.0
 grow_horizontal = 1
 grow_vertical = 1
 text = "red herring"
+evidence_key = &"red herring"
 
 [node name="EvidenceCard3" parent="ColorRect" unique_id=736911243 instance=ExtResource("1_3tc2g")]
 layout_mode = 0
@@ -72,6 +70,7 @@ offset_bottom = 472.0
 grow_horizontal = 1
 grow_vertical = 1
 text = "clump of brown fur"
+evidence_key = &"clump of brown fur"
 
 [node name="EvidenceCard4" parent="ColorRect" unique_id=1054556280 instance=ExtResource("1_3tc2g")]
 layout_mode = 0
@@ -87,6 +86,7 @@ offset_bottom = 568.0
 grow_horizontal = 1
 grow_vertical = 1
 text = "glass of red wine"
+evidence_key = &"glass of red wine"
 
 [node name="EvidenceCard5" parent="ColorRect" unique_id=1845101235 instance=ExtResource("1_3tc2g")]
 layout_mode = 0
@@ -102,6 +102,7 @@ offset_bottom = 672.0
 grow_horizontal = 1
 grow_vertical = 1
 text = "candelabra"
+evidence_key = &"candelabra"
 
 [node name="EvidenceCard6" parent="ColorRect" unique_id=416778645 instance=ExtResource("1_3tc2g")]
 layout_mode = 0
@@ -117,14 +118,16 @@ offset_bottom = 768.0
 grow_horizontal = 1
 grow_vertical = 1
 text = "kitchen knife"
+evidence_key = &"kitchen knife"
 
-[node name="Control" type="Control" parent="." unique_id=479207306]
+[node name="Control" type="Control" parent="ColorRect" unique_id=479207306]
 anchors_preset = 0
-offset_top = 64.0
-offset_right = 56.0
-offset_bottom = 88.0
+offset_left = 24.0
+offset_top = 128.0
+offset_right = 80.0
+offset_bottom = 152.0
 
-[node name="MadLib2" parent="Control" unique_id=1840590631 instance=ExtResource("2_fdrd7")]
+[node name="MadLib2" parent="ColorRect/Control" unique_id=1840590631 instance=ExtResource("2_fdrd7")]
 custom_minimum_size = Vector2(25, 15)
 layout_mode = 0
 offset_left = 640.0
@@ -135,7 +138,7 @@ theme = ExtResource("3_7a7xl")
 theme_type_variation = &"MadLib"
 text = "__________"
 
-[node name="Label3" type="Label" parent="Control" unique_id=1310776268]
+[node name="Label3" type="Label" parent="ColorRect/Control" unique_id=1310776268]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 176.0
@@ -144,7 +147,7 @@ offset_bottom = 224.0
 theme = ExtResource("3_7a7xl")
 text = "Something I did find was a"
 
-[node name="Label6" type="Label" parent="Control" unique_id=144831801]
+[node name="Label6" type="Label" parent="ColorRect/Control" unique_id=144831801]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 232.0
@@ -153,7 +156,7 @@ offset_bottom = 280.0
 theme = ExtResource("3_7a7xl")
 text = "which doesn't belong to the count. So,"
 
-[node name="Label7" type="Label" parent="Control" unique_id=1297701884]
+[node name="Label7" type="Label" parent="ColorRect/Control" unique_id=1297701884]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 288.0
@@ -162,7 +165,7 @@ offset_bottom = 336.0
 theme = ExtResource("3_7a7xl")
 text = "why is it here? "
 
-[node name="Label5" type="Label" parent="Control" unique_id=2131139189]
+[node name="Label5" type="Label" parent="ColorRect/Control" unique_id=2131139189]
 layout_mode = 0
 offset_left = 856.0
 offset_top = 184.0
@@ -171,94 +174,95 @@ offset_bottom = 232.0
 theme = ExtResource("3_7a7xl")
 text = ","
 
-[node name="EvidenceCard" parent="." unique_id=726009956 instance=ExtResource("1_3tc2g")]
+[node name="EvidenceCard7" parent="ColorRect" unique_id=726009956 instance=ExtResource("1_3tc2g")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1152.0
-offset_top = 72.0
-offset_right = 1622.0
-offset_bottom = 144.0
+offset_left = 1176.0
+offset_top = 136.0
+offset_right = 1646.0
+offset_bottom = 208.0001
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Label8" type="Label" parent="." unique_id=1757143022]
+[node name="Label8" type="Label" parent="ColorRect" unique_id=1757143022]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 472.0
-offset_right = 1188.0
-offset_bottom = 520.0
+offset_left = 88.0
+offset_top = 536.0
+offset_right = 1212.0
+offset_bottom = 584.0
 theme = ExtResource("3_7a7xl")
 text = "Another thing I found was a"
 
-[node name="MadLib3" parent="." unique_id=1778905151 instance=ExtResource("2_fdrd7")]
+[node name="MadLib3" parent="ColorRect" unique_id=1778905151 instance=ExtResource("2_fdrd7")]
 custom_minimum_size = Vector2(25, 15)
 layout_mode = 0
-offset_left = 664.0
-offset_top = 472.0
-offset_right = 1056.0
-offset_bottom = 568.0
+offset_left = 688.0
+offset_top = 536.0
+offset_right = 1080.0
+offset_bottom = 632.0
 theme = ExtResource("3_7a7xl")
 theme_type_variation = &"MadLib"
 text = "_________"
 
-[node name="Label9" type="Label" parent="." unique_id=1360850266]
+[node name="Label9" type="Label" parent="ColorRect" unique_id=1360850266]
 layout_mode = 0
-offset_left = 856.0
-offset_top = 480.0
-offset_right = 880.0
-offset_bottom = 528.0
+offset_left = 880.0
+offset_top = 544.0
+offset_right = 904.0
+offset_bottom = 592.0
 theme = ExtResource("3_7a7xl")
 text = ","
 
-[node name="Label10" type="Label" parent="." unique_id=1711352997]
+[node name="Label10" type="Label" parent="ColorRect" unique_id=1711352997]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 528.0
-offset_right = 1188.0
-offset_bottom = 576.0
+offset_left = 88.0
+offset_top = 592.0
+offset_right = 1212.0
+offset_bottom = 640.0
 theme = ExtResource("3_7a7xl")
 text = "which by itself isn't inherently "
 
-[node name="Label11" type="Label" parent="." unique_id=280207328]
+[node name="Label11" type="Label" parent="ColorRect" unique_id=280207328]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 576.0
-offset_right = 856.0
-offset_bottom = 624.0
+offset_left = 88.0
+offset_top = 640.0
+offset_right = 880.0
+offset_bottom = 688.0
 theme = ExtResource("3_7a7xl")
 text = "suspicious, but I wonder if there's"
 
-[node name="ConclusionLabel1" type="Label" parent="." unique_id=1226818767]
+[node name="ConclusionLabel1" type="Label" parent="ColorRect" unique_id=1226818767]
 visible = false
 layout_mode = 0
-offset_left = 64.0
-offset_top = 776.0
-offset_right = 1210.0
-offset_bottom = 824.0
+offset_left = 88.0
+offset_top = 840.0
+offset_right = 1234.0
+offset_bottom = 888.0
 theme = ExtResource("3_7a7xl")
 text = "Therefore: Maybe the count is still "
 
-[node name="ConclusionLabel2" type="Label" parent="." unique_id=424427339]
+[node name="ConclusionLabel2" type="Label" parent="ColorRect" unique_id=424427339]
 visible = false
 layout_mode = 0
-offset_left = 64.0
-offset_top = 824.0
-offset_right = 1210.0
-offset_bottom = 872.0
+offset_left = 88.0
+offset_top = 888.0
+offset_right = 1234.0
+offset_bottom = 936.0
 theme = ExtResource("3_7a7xl")
 text = "alive and in the house with me..."
 
-[node name="Control2" type="Control" parent="." unique_id=1240971232]
+[node name="Control2" type="Control" parent="ColorRect" unique_id=1240971232]
 anchors_preset = 0
-offset_top = 48.0
-offset_right = 40.0
-offset_bottom = 104.0
+offset_left = 24.0
+offset_top = 112.0
+offset_right = 64.0
+offset_bottom = 168.0
 
-[node name="MadLib" parent="Control2" unique_id=317813038 instance=ExtResource("2_fdrd7")]
+[node name="MadLib" parent="ColorRect/Control2" unique_id=317813038 instance=ExtResource("2_fdrd7")]
 custom_minimum_size = Vector2(25, 15)
 layout_mode = 0
 offset_left = 336.0
@@ -268,7 +272,7 @@ offset_bottom = 168.0
 theme = ExtResource("3_7a7xl")
 text = "_______"
 
-[node name="Label2" type="Label" parent="Control2" unique_id=1466498559]
+[node name="Label2" type="Label" parent="ColorRect/Control2" unique_id=1466498559]
 layout_mode = 0
 offset_left = 496.0
 offset_top = 72.0
@@ -277,7 +281,7 @@ offset_bottom = 120.0
 theme = ExtResource("3_7a7xl")
 text = "that I could find. "
 
-[node name="Label" type="Label" parent="Control2" unique_id=281666913]
+[node name="Label" type="Label" parent="ColorRect/Control2" unique_id=281666913]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 72.0
@@ -286,7 +290,7 @@ offset_bottom = 120.0
 theme = ExtResource("3_7a7xl")
 text = "there was no "
 
-[node name="Label4" type="Label" parent="Control2" unique_id=804331602]
+[node name="Label4" type="Label" parent="ColorRect/Control2" unique_id=804331602]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 16.0
@@ -295,13 +299,13 @@ offset_bottom = 64.0
 theme = ExtResource("3_7a7xl")
 text = "This is a peculiar case. First of all,"
 
-[node name="Label12" type="Label" parent="." unique_id=316267700]
+[node name="Label12" type="Label" parent="ColorRect" unique_id=316267700]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 624.0
-offset_right = 856.0
-offset_bottom = 672.0
+offset_left = 88.0
+offset_top = 688.0
+offset_right = 880.0
+offset_bottom = 736.0
 theme = ExtResource("3_7a7xl")
 text = "more to it than how it appears..."
 
-[connection signal="is_dragged" from="EvidenceCard" to="Control2/MadLib" method="_on_evidence_card_is_dragged"]
+[connection signal="is_dragged" from="ColorRect/EvidenceCard7" to="ColorRect/Control2/MadLib" method="_on_evidence_card_is_dragged"]

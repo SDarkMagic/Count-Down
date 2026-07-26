@@ -38,13 +38,13 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('open_evidence'):
 		if in_evidence:
-			%EvidenceBoard.hide()
+			%EvidenceBoard/CanvasLayer.hide()
 			%EvidenceBoard.play_close_sound()
 			current_fov = base_fov
 			in_evidence = false
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		else:
-			%EvidenceBoard.show()
+			%EvidenceBoard/CanvasLayer.show()
 			%EvidenceBoard.play_open_sound()
 			current_fov = 75.0
 			in_evidence = true
