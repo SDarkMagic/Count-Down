@@ -2,6 +2,7 @@ class_name DialogueBox
 extends MarginContainer
 
 @export_multiline var texts: Array[String]
+@export var title: String
 @export var is_visible: bool = false
 @export var time_cost_per_line: int = 1
 
@@ -9,7 +10,7 @@ extends MarginContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	$MarginContainer/Label.text = title
 
 func begin_linear_dialogue() -> void:
 	get_tree().paused = true

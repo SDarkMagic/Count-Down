@@ -41,8 +41,9 @@ layout_mode = 2
 text = "Game Over"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=2376507]
+[node name="RestartButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=2376507]
 layout_mode = 2
 text = "Restart"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

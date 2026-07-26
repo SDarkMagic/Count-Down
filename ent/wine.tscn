@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d2ts7b735bpg4"]
+
+[ext_resource type="Script" uid="uid://bt43q4wkb151t" path="res://script/evidence_item.gd" id="1_fb5kw"]
+[ext_resource type="PackedScene" uid="uid://63w5h8cxnwsf" path="res://ui/dialogue_box.tscn" id="2_fb5kw"]
+[ext_resource type="Script" uid="uid://cx25gqci25gbj" path="res://script/interactable_component.gd" id="2_txohs"]
+[ext_resource type="ArrayMesh" uid="uid://dsqxtkmam6261" path="res://mdl/wine.res" id="4_l61b7"]
+[ext_resource type="PackedScene" uid="uid://cpyo8lxmqael7" path="res://ui/interact_popup.tscn" id="5_txohs"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fb5kw"]
+points = PackedVector3Array(0.0473236, 0.19005181, -0.0067027328, 0.04681669, -0.0015873015, -0.01349113, 0.011899478, -0.0015873015, 0.04681669, -0.016659828, -0.0015873015, -0.04522939, 0.002293579, 0.18743855, -0.048957214, -0.009732576, 0.19628558, 0.044414803, -0.042060692, -0.0015873015, 0.024594782, 0.03512343, 0.18657136, 0.03512343, -0.03991795, 0.19650786, -0.021817409, 0.024594782, -0.0015873015, -0.042060692, 0.043647993, -0.0015873015, 0.021426084, -0.04522939, -0.0015873015, -0.016659828, 0.03463286, 0.18236627, -0.035982728, -0.03283891, 0.18186328, 0.037345443, -0.01349113, -0.0015873015, 0.04681669, -0.030342061, 0.18301463, -0.039242085, -0.00068713084, 0.18035497, 0.049909446, -0.04851762, 0.18365164, 0.0112486435, 0.044306047, 0.19604552, 0.011293634, 0.014372427, 0.19656648, -0.04295477, 0.049701095, 0.1800141, 0.0022681507, 0.027773736, -0.0015873015, 0.04046904, 0.017038932, 0.18270788, 0.046589695, -0.04833884, 0.18334836, -0.012605245, -0.038881738, -0.0015873015, -0.029355133, 0.01824713, -0.0015873015, -0.04522939, 0.020128146, 0.18326913, -0.04531316, -0.012605245, 0.18334836, -0.04833884, 0.04716175, 0.18374102, -0.015654556, 0.04046904, -0.0015873015, -0.026186435, -0.04295729, 0.19657205, 0.01437321, 0.046589695, 0.18270788, 0.017038932)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5xexe"]
+viewport_path = NodePath("Sprite3D2/InteractPopup")
+
+[node name="Wine" type="StaticBody3D" unique_id=395280461 node_paths=PackedStringArray("interactable_component", "dialogue_box")]
+script = ExtResource("1_fb5kw")
+model_node_path = "MeshInstance3D"
+interactable_component = NodePath("InteractableComponent")
+materials_to_outline = Array[int]([0])
+dialogue_box = NodePath("DialogueBox2")
+evidence_board_key = &"wine"
+metadata/_custom_type_script = "uid://bt43q4wkb151t"
+
+[node name="DialogueBox2" parent="." unique_id=135765232 instance=ExtResource("2_fb5kw")]
+texts = Array[String](["I only found this glass, no bottle.", "It appears to be darker than any red wine I've drunk.", "Not worth the risk of drinking it to be sure it's wine though. Plus that'd be tampering with the evidence."])
+title = "Red Wine"
+time_cost_per_line = 3
+
+[node name="InteractableComponent" type="Node" parent="." unique_id=514529928]
+script = ExtResource("2_txohs")
+metadata/_custom_type_script = "uid://cx25gqci25gbj"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=563865604]
+transform = Transform3D(3.6, 0, 0, 0, 3.6, 0, 0, 0, 3.6, 0, 0, 0)
+mesh = ExtResource("4_l61b7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=31456886]
+transform = Transform3D(3.6, 0, 0, 0, 3.6, 0, 0, 0, 3.6, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_fb5kw")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=946914125]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.0931766, 0.011498928)
+visible = false
+billboard = 2
+texture = SubResource("ViewportTexture_5xexe")
+
+[node name="InteractPopup" parent="Sprite3D2" unique_id=704226028 instance=ExtResource("5_txohs")]
+
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interactable_component_interacted"]

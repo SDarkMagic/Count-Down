@@ -14,12 +14,18 @@ func decrease_time_limt(delta: int) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	GlobalSignals.emit_signal('update_clock', minutes_remaining, time_limit)
 	if minutes_remaining <= 0:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		get_tree().paused = true
+		GlobalSignals.emit_signal('hide_overlays')
 		$CanvasLayer.show()
 
 
 func _on_timer_timeout() -> void:
 	minutes_remaining -= 1
 	print(minutes_remaining)
+
+
+func _on_restart_button_pressed() -> void:
+	GlobalSignals.reload_scene()

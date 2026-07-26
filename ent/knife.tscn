@@ -4,17 +4,22 @@
 [ext_resource type="Script" uid="uid://cx25gqci25gbj" path="res://script/interactable_component.gd" id="2_0papu"]
 [ext_resource type="ArrayMesh" uid="uid://bk4mvkxeqxabd" path="res://mdl/knife.res" id="3_ouob3"]
 [ext_resource type="PackedScene" uid="uid://63w5h8cxnwsf" path="res://ui/dialogue_box.tscn" id="4_8olp2"]
+[ext_resource type="PackedScene" uid="uid://cpyo8lxmqael7" path="res://ui/interact_popup.tscn" id="5_0papu"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ycgc3"]
 points = PackedVector3Array(0.014891979, 0.1732208, 0.0022270563, -0.021125674, -0.10586238, -0.004524794, -0.01662165, -0.11039284, -0.004524794, -0.021125674, -0.10586238, 0.004478848, -0.01662165, 0.19347657, -0.0022730022, 0.028404053, 0.017937489, -0.0022730022, 0.005888778, -0.10586238, 0.004478848, -0.018871238, 0.08543484, 0.004478848, 0.005888778, -0.10586238, -0.004524794, 0.012642391, 0.18444847, -0.0022730022, -0.018871238, 0.08766724, -0.004524794, -0.005364012, 0.22499284, 0.0022270563, 0.028404053, 0.017937489, 0.0022270563, 0.012642391, 0.015672255, 0.004478848, 0.010392803, 0.015672255, -0.004524794, -0.018871238, 0.17771843, 0.0022270563, 0.026149618, 0.092164874, -0.0022730022, -0.000859987, 0.22272761, -0.0022730022, 0.026149618, 0.092164874, 0.0022270563, 0.0036391895, 0.2114671, 0.0022270563, -0.018871238, 0.17771843, -0.0022730022, -0.000859987, -0.11039284, 0.004478848, 0.019396003, 0.1506998, -0.0022730022, -0.012117624, 0.08543484, 0.004478848, -0.005364012, 0.22499284, -0.0022730022, -0.0143672135, 0.20470424, 0.0022270563, 0.019396003, 0.1506998, 0.0022270563, -0.000859987, -0.11039284, -0.004524794, -0.01662165, -0.11039284, 0.004478848, -0.0143672135, 0.20470424, -0.0022730022, -0.000859987, 0.22272761, 0.0022270563, 0.012642391, 0.18444847, 0.0022270563)
 
-[node name="Knife" type="StaticBody3D" unique_id=1945191143 node_paths=PackedStringArray("interactable_component", "dialogue_box")]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ouob3"]
+viewport_path = NodePath("Sprite3D2/InteractPopup")
+
+[node name="Knife" type="StaticBody3D" unique_id=1945191143 node_paths=PackedStringArray("interactable_component", "dialogue_box", "interact_prompt_node")]
 script = ExtResource("1_8olp2")
 model_node_path = "MeshInstance3D"
 interactable_component = NodePath("InteractableComponent")
 materials_to_outline = Array[int]([0, 1])
 dialogue_box = NodePath("DialogueBox")
 evidence_board_key = &"knife"
+interact_prompt_node = NodePath("Sprite3D2")
 metadata/_custom_type_script = "uid://bt43q4wkb151t"
 
 [node name="InteractableComponent" type="Node" parent="." unique_id=763941121]
@@ -22,12 +27,23 @@ script = ExtResource("2_0papu")
 metadata/_custom_type_script = "uid://cx25gqci25gbj"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=663655084]
+transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, -3, 0, 3, -1.3113416e-07, 0, 0, 0)
 mesh = ExtResource("3_ouob3")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=15410987]
+transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, -3, 0, 3, -1.3113416e-07, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ycgc3")
 
 [node name="DialogueBox" parent="." unique_id=773324529 instance=ExtResource("4_8olp2")]
 texts = Array[String](["An ordinary knife. You sense nothing strange about it.", "The faint red fluid dripping from it's tip appears to be no more than the remnants of a recently victimized tomato."])
+title = "Kitchen Knife"
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=726593152]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.5931766, 0.011498928)
+visible = false
+billboard = 2
+texture = SubResource("ViewportTexture_ouob3")
+
+[node name="InteractPopup" parent="Sprite3D2" unique_id=704226028 instance=ExtResource("5_0papu")]
 
 [connection signal="interacted" from="InteractableComponent" to="." method="_on_interactable_component_interacted"]

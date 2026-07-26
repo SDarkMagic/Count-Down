@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cvf73phlb04kq"]
+
+[ext_resource type="PackedScene" uid="uid://chmroabkspusa" path="res://mdl/herring.blend" id="1_45f1y"]
+[ext_resource type="Script" uid="uid://bt43q4wkb151t" path="res://script/evidence_item.gd" id="1_jl0p7"]
+[ext_resource type="Script" uid="uid://cx25gqci25gbj" path="res://script/interactable_component.gd" id="3_jl0p7"]
+[ext_resource type="PackedScene" uid="uid://63w5h8cxnwsf" path="res://ui/dialogue_box.tscn" id="4_jl0p7"]
+[ext_resource type="PackedScene" uid="uid://cpyo8lxmqael7" path="res://ui/interact_popup.tscn" id="5_tunk4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jl0p7"]
+radius = 0.28806108
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_eobt4"]
+viewport_path = NodePath("Sprite3D2/InteractPopup")
+
+[node name="Herring" type="StaticBody3D" unique_id=1433928333 node_paths=PackedStringArray("interactable_component", "dialogue_box", "interact_prompt_node")]
+script = ExtResource("1_jl0p7")
+model_node_path = "herring/Sphere_002"
+interactable_component = NodePath("InteractableComponent")
+materials_to_outline = Array[int]([0])
+dialogue_box = NodePath("DialogueBox")
+evidence_board_key = &"fish"
+interact_prompt_node = NodePath("Sprite3D2")
+metadata/_custom_type_script = "uid://bt43q4wkb151t"
+
+[node name="herring" parent="." unique_id=1665536250 instance=ExtResource("1_45f1y")]
+
+[node name="InteractableComponent" type="Node" parent="." unique_id=1169219903]
+script = ExtResource("3_jl0p7")
+metadata/_custom_type_script = "uid://cx25gqci25gbj"
+
+[node name="DialogueBox" parent="." unique_id=773324529 instance=ExtResource("4_jl0p7")]
+texts = Array[String](["Found in the bedroom.", "Ha ha. Very Funny. Still, evidence is evidence."])
+title = "Red Herring"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1096008971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024229407, 0, 0)
+shape = SubResource("SphereShape3D_jl0p7")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=576683221]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.5931766, 0.011498928)
+visible = false
+billboard = 2
+texture = SubResource("ViewportTexture_eobt4")
+
+[node name="InteractPopup" parent="Sprite3D2" unique_id=704226028 instance=ExtResource("5_tunk4")]
+
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interactable_component_interacted"]
