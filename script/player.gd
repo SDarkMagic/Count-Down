@@ -5,7 +5,7 @@ const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.02
 
 # view-bob variables
-const BOB_FREQ: float = 2.1
+const BOB_FREQ: float = 1.7
 const BOB_AMP: float = 0.006
 var t_bob: float = 0.0
 
@@ -39,11 +39,13 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('open_evidence'):
 		if in_evidence:
 			%EvidenceBoard.hide()
+			%EvidenceBoard.play_close_sound()
 			current_fov = base_fov
 			in_evidence = false
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		else:
 			%EvidenceBoard.show()
+			%EvidenceBoard.play_open_sound()
 			current_fov = 75.0
 			in_evidence = true
 			Input.mouse_mode = Input.MOUSE_MODE_CONFINED
@@ -96,6 +98,8 @@ func _headbob(time: float) -> Vector3:
 	var pos: Vector3 = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
+	if pos.y / BOB_AMP <= -0.95:
+		$FootstepPlayer.play()
 	return pos
 
 func get_interactable_component_at_shapecast() -> InteractableComponent:

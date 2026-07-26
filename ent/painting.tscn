@@ -13,6 +13,7 @@ size = Vector3(5, 5, 0.6)
 viewport_path = NodePath("Sprite3D2/InteractPopup")
 
 [node name="Painting" type="StaticBody3D" unique_id=883618739 node_paths=PackedStringArray("interactable_component", "dialogue_box", "interact_prompt_node")]
+collision_layer = 2
 script = ExtResource("1_bvo8v")
 interactable_component = NodePath("InteractableComponent")
 dialogue_box = NodePath("DialogueBox")

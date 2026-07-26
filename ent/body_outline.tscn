@@ -13,6 +13,7 @@ size = Vector3(2.2, 0.1, 3.9)
 viewport_path = NodePath("Sprite3D2/InteractPopup")
 
 [node name="BodyOutline" type="StaticBody3D" unique_id=2035655490 node_paths=PackedStringArray("interactable_component", "dialogue_box", "interact_prompt_node")]
+collision_layer = 2
 script = ExtResource("1_m76s1")
 interactable_component = NodePath("InteractableComponent")
 dialogue_box = NodePath("DialogueBox")

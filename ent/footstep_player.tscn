@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bbv51diba5gja"]
+
+[ext_resource type="Script" uid="uid://b8uis3hrjtf6f" path="res://script/footstep_player.gd" id="1_oplv0"]
+[ext_resource type="AudioStream" uid="uid://dcdh75r7f14pf" path="res://snd/footstep_wood.ogg" id="2_ls8rf"]
+[ext_resource type="AudioStream" uid="uid://bn1vajf3wuafq" path="res://snd/footstep_tile.ogg" id="3_b8sdd"]
+
+[node name="FootstepPlayer" type="Node3D" unique_id=2103272897]
+script = ExtResource("1_oplv0")
+footstep_sound_wood = ExtResource("2_ls8rf")
+footstep_sound_tile = ExtResource("3_b8sdd")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=721314718]
+volume_db = -20.0
+max_db = 0.0
+bus = &"Sound Effects"
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=346789213]

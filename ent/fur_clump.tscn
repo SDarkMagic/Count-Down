@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dxkt836hi7kht"]
+
+[ext_resource type="Script" uid="uid://bt43q4wkb151t" path="res://script/evidence_item.gd" id="1_8ljkj"]
+[ext_resource type="Texture2D" uid="uid://c8x0eol5h1k7" path="res://mdl/textures/fur_clump.png" id="2_whgk6"]
+[ext_resource type="Script" uid="uid://cx25gqci25gbj" path="res://script/interactable_component.gd" id="3_n7bwb"]
+[ext_resource type="PackedScene" uid="uid://63w5h8cxnwsf" path="res://ui/dialogue_box.tscn" id="4_vrsx7"]
+[ext_resource type="PackedScene" uid="uid://cpyo8lxmqael7" path="res://ui/interact_popup.tscn" id="5_8m3gn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7qw4j"]
+size = Vector3(1, 1, 1.2)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8ksca"]
+viewport_path = NodePath("Sprite3D2/InteractPopup")
+
+[node name="FurClump" type="StaticBody3D" unique_id=246046388 node_paths=PackedStringArray("interactable_component", "dialogue_box", "interact_prompt_node")]
+script = ExtResource("1_8ljkj")
+interactable_component = NodePath("InteractableComponent")
+dialogue_box = NodePath("DialogueBox")
+evidence_board_key = &"fur"
+interact_prompt_node = NodePath("Sprite3D2")
+metadata/_custom_type_script = "uid://bt43q4wkb151t"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1516770828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.29999995)
+shape = SubResource("BoxShape3D_7qw4j")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=562410549]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+texture = ExtResource("2_whgk6")
+
+[node name="Sprite3D" type="Sprite3D" parent="Sprite3D" unique_id=461057949]
+transform = Transform3D(1, -2.1855694e-08, -3.785517e-08, -2.1855696e-08, 0.5, -0.8660255, 3.785517e-08, 0.8660255, 0.5, 1.3113417e-08, 0.3, -0.4)
+texture = ExtResource("2_whgk6")
+
+[node name="InteractableComponent" type="Node" parent="." unique_id=2090616688]
+script = ExtResource("3_n7bwb")
+metadata/_custom_type_script = "uid://cx25gqci25gbj"
+
+[node name="DialogueBox" parent="." unique_id=135765232 instance=ExtResource("4_vrsx7")]
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1120956643]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.1, 0.99317664, -0.28850108)
+visible = false
+billboard = 2
+texture = SubResource("ViewportTexture_8ksca")
+
+[node name="InteractPopup" parent="Sprite3D2" unique_id=704226028 instance=ExtResource("5_8m3gn")]
+
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interactable_component_interacted"]

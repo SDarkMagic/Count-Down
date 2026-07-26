@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7u5aj3e0nbcj" path="res://script/player.gd" id="1_jgavj"]
 [ext_resource type="PackedScene" uid="uid://tyfxpy7htrlr" path="res://ent/evidence_board.tscn" id="2_0xrom"]
+[ext_resource type="PackedScene" uid="uid://bbv51diba5gja" path="res://ent/footstep_player.tscn" id="2_f0gwv"]
 [ext_resource type="Shader" uid="uid://b5ptog53u0l54" path="res://addons/color-correction-and-screen-effects_ArseniyMirniy/Materials and Shaders/ScreenEffects_Ultimate.tres" id="3_wbaei"]
 [ext_resource type="Texture2D" uid="uid://bnn45uwfynrl5" path="res://addons/color-correction-and-screen-effects_ArseniyMirniy/Textures/noise_texture.tres" id="4_irdnn"]
 [ext_resource type="PackedScene" uid="uid://bu4de3hb67j3j" path="res://ui/clock.tscn" id="5_m2wci"]
@@ -67,6 +68,9 @@ mesh = SubResource("CapsuleMesh_8m5ey")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2857143, 0)
 shape = SubResource("ConvexPolygonShape3D_irdnn")
 
+[node name="FootstepPlayer" parent="." unique_id=2103272897 instance=ExtResource("2_f0gwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.71428573, 0)
+
 [node name="Head" type="Node3D" parent="." unique_id=676233425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3957459, 0)
 
@@ -77,6 +81,7 @@ unique_name_in_owner = true
 shape = SubResource("SphereShape3D_jgavj")
 target_position = Vector3(0, 0, -3.5)
 max_results = 2
+collision_mask = 3
 collide_with_areas = true
 
 [node name="EvidenceBoard" parent="Head/Camera3D" unique_id=74119123 instance=ExtResource("2_0xrom")]

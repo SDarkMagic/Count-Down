@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="Count Down"
+config/version="0.1.0"
 run/main_scene="uid://borh1iv5figol"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://djr8lkkuy1xui"
 
 [autoload]
 
@@ -21,12 +27,9 @@ GlobalSignals="*uid://chqnaehf10q7k"
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=720
-
-[filesystem]
-
-import/blender/enabled=false
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 
 [input]
 
