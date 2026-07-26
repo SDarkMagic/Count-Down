@@ -15,7 +15,7 @@ config/version="0.1.0"
 run/main_scene="uid://b14rmdhsqcikm"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/show_image=false
-config/icon="res://icon.svg"
+config/icon="uid://c4pkv8bnd2ias"
 
 [audio]
 
@@ -29,6 +29,7 @@ GlobalSignals="*uid://chqnaehf10q7k"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 
 [input]
 

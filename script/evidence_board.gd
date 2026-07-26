@@ -15,6 +15,8 @@ var projected_global_mouse_pos: Vector3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	origin = position
+	GlobalSignals.connect('win_game', $CanvasLayer/EvidenceBoardDisplay.hide)
+
 	
 func mouse_entered() -> void:
 	is_mouse_inside_viewport = true

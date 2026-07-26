@@ -30,6 +30,7 @@ script = ExtResource("3_fj6ty")
 metadata/_custom_type_script = "uid://cx25gqci25gbj"
 
 [node name="DialogueBox" parent="." unique_id=773324529 instance=ExtResource("4_kudaq")]
-texts = Array[String](["Found in the foyer. A typical three pronged candelabra.", "The three candles it's holding are pretty well-used and are almost burned out."])
+texts = Array[String](["A typical three pronged candelabra. The candles are well worn down, but if that's from blunt force or melting isn't immediately clear.", "Looking at it a bit better, I can tell that the candles are simply just well used. That wax is definitely melted.", "This isn't something I can use for evidence."])
+time_cost_per_line = 4
 
 [connection signal="interacted" from="InteractableComponent" to="." method="_on_interactable_component_interacted"]

@@ -7,6 +7,7 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalSignals.connect('decrease_time_limit', decrease_time_limt)
+	GlobalSignals.connect('win_game', win)
 	$Timer.start(1.0)
 
 func decrease_time_limt(delta: int) -> void:
@@ -15,7 +16,6 @@ func decrease_time_limt(delta: int) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	GlobalSignals.emit_signal('update_clock', minutes_remaining, time_limit)
-	GlobalSignals.connect('win_game', win)
 	if minutes_remaining <= 0:
 		game_over()
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://jyytess7nvl5"]
 
 [ext_resource type="Theme" uid="uid://bsawtooyh4tde" path="res://ui/evidence_board.theme" id="1_oo8kp"]
+[ext_resource type="FontFile" uid="uid://cs26utyo0y4tw" path="res://fnt/JimNightshade-Regular.ttf" id="2_5eixk"]
 
 [node name="GameOver" type="Control" unique_id=1127285397]
 layout_mode = 3
@@ -25,8 +26,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 147.0
-offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 50
@@ -40,9 +39,14 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1171532146]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_5eixk")
+theme_override_font_sizes/font_size = 303
 text = "Game Over"
 horizontal_alignment = 1
 
 [node name="RestartButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1092408792]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+theme_override_font_sizes/font_size = 203
 text = "Restart"

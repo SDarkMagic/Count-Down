@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 
@@ -77,10 +78,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 
-	if (Input.is_action_pressed('ui_accept')):
-		velocity.y = speed
-	else:
-		velocity.y = move_toward(velocity.y, -9.8, speed)
+	#if (Input.is_action_pressed('ui_accept')):
+	#	velocity.y = speed
+	#else:
+	#	velocity.y = move_toward(velocity.y, -9.8, speed)
 
 	# View-bob
 	if direction != Vector3.ZERO:

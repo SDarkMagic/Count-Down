@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ggukybl3b7ut" path="res://script/evidence_board.gd" id="1_61jst"]
 [ext_resource type="AudioStream" uid="uid://dir82vjxea6hw" path="res://snd/evidence_open.ogg" id="2_dr13r"]
 [ext_resource type="AudioStream" uid="uid://buehe5fhussur" path="res://snd/evidence_close.ogg" id="3_0noot"]
-[ext_resource type="PackedScene" uid="uid://ctj0iovhvb3gx" path="res://ui/evidence_board_display.tscn" id="3_af7b8"]
+[ext_resource type="PackedScene" uid="uid://dvb1r7ctada82" path="res://ui/evidence_board_display.tscn" id="3_af7b8"]
 [ext_resource type="ArrayMesh" uid="uid://drrywbqb1lfxw" path="res://mdl/folder.res" id="4_cm60o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dr13r"]
