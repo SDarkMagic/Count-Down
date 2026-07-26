@@ -14,12 +14,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
+
 func play_open_sound() -> void:
 	$AudioStreamPlayer3D.stream = open_sound
 	$AudioStreamPlayer3D.play()
-	
+
 func play_close_sound() -> void:
 	$AudioStreamPlayer3D.stream = close_sound
 	$AudioStreamPlayer3D.play()
-	
+

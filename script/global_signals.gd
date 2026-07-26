@@ -1,6 +1,7 @@
 extends Node
 
 signal decrease_time_limit(delta: int)
+signal find_evidence(key: StringName, good_evidence: bool)
 signal update_clock(time_remaining: int, time_limit: int)
 signal hide_clock()
 signal show_clock()
