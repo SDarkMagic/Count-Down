@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dhtmgu2k5j7de" path="res://ent/evidence_card.tscn" id="1_3tc2g"]
 [ext_resource type="Script" uid="uid://d2r8ps5b1kcyu" path="res://script/evidence_board_display.gd" id="1_mnyor"]
 [ext_resource type="PackedScene" uid="uid://c68ninjoyj3yw" path="res://ent/mad_lib.tscn" id="2_fdrd7"]
+[ext_resource type="Theme" uid="uid://bsawtooyh4tde" path="res://ui/evidence_board.theme" id="3_7a7xl"]
 
 [node name="EvidenceBoardDisplay" type="Control" unique_id=707370701]
 layout_mode = 3
@@ -21,35 +22,181 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1948674215]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+[node name="Control" type="Control" parent="." unique_id=479207306]
+anchors_preset = 0
+offset_top = 64.0
+offset_right = 56.0
+offset_bottom = 88.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1913080311]
-layout_mode = 2
+[node name="MadLib2" parent="Control" unique_id=1840590631 instance=ExtResource("2_fdrd7")]
+custom_minimum_size = Vector2(25, 15)
+layout_mode = 0
+offset_left = 640.0
+offset_top = 176.0
+offset_right = 1032.0
+offset_bottom = 272.0
+theme = ExtResource("3_7a7xl")
+theme_type_variation = &"MadLib"
+text = "_________________"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=271497685]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Label3" type="Label" parent="Control" unique_id=1310776268]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 176.0
+offset_right = 640.0
+offset_bottom = 224.0
+theme = ExtResource("3_7a7xl")
+text = "Something I did find was a"
 
-[node name="MadLib" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=317813038 instance=ExtResource("2_fdrd7")]
-custom_minimum_size = Vector2(25, 150)
-layout_mode = 2
-text = "(Drag button here)"
+[node name="Label6" type="Label" parent="Control" unique_id=144831801]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 232.0
+offset_right = 1188.0
+offset_bottom = 280.0
+theme = ExtResource("3_7a7xl")
+text = "which doesn't belong to the count. So why is"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=347092337]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Label7" type="Label" parent="Control" unique_id=1297701884]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 288.0
+offset_right = 1188.0
+offset_bottom = 336.0
+theme = ExtResource("3_7a7xl")
+text = "it here? "
 
-[node name="EvidenceCard" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=726009956 instance=ExtResource("1_3tc2g")]
-layout_mode = 2
+[node name="Label5" type="Label" parent="Control" unique_id=2131139189]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 176.0
+offset_right = 1048.0
+offset_bottom = 224.0
+theme = ExtResource("3_7a7xl")
+text = ","
 
-[connection signal="is_dragged" from="MarginContainer/HBoxContainer/VBoxContainer2/EvidenceCard" to="MarginContainer/HBoxContainer/VBoxContainer/MadLib" method="_on_evidence_card_is_dragged"]
+[node name="EvidenceCard" parent="." unique_id=726009956 instance=ExtResource("1_3tc2g")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1344.0
+offset_top = 48.0
+offset_right = 1862.0
+offset_bottom = 69.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Label8" type="Label" parent="." unique_id=1757143022]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 472.0
+offset_right = 1188.0
+offset_bottom = 520.0
+theme = ExtResource("3_7a7xl")
+text = "Another thing I found was a"
+
+[node name="MadLib3" parent="." unique_id=1778905151 instance=ExtResource("2_fdrd7")]
+custom_minimum_size = Vector2(25, 15)
+layout_mode = 0
+offset_left = 664.0
+offset_top = 472.0
+offset_right = 1056.0
+offset_bottom = 568.0
+theme = ExtResource("3_7a7xl")
+theme_type_variation = &"MadLib"
+text = "_________________"
+
+[node name="Label9" type="Label" parent="." unique_id=1360850266]
+layout_mode = 0
+offset_left = 1048.0
+offset_top = 472.0
+offset_right = 1072.0
+offset_bottom = 520.0
+theme = ExtResource("3_7a7xl")
+text = ","
+
+[node name="Label10" type="Label" parent="." unique_id=1711352997]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 528.0
+offset_right = 1188.0
+offset_bottom = 576.0
+theme = ExtResource("3_7a7xl")
+text = "which by itself isn't inherently suspicious, but "
+
+[node name="Label11" type="Label" parent="." unique_id=280207328]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 584.0
+offset_right = 1188.0
+offset_bottom = 632.0
+theme = ExtResource("3_7a7xl")
+text = "I wonder if there's more to it than how it appears..."
+
+[node name="ConclusionLabel1" type="Label" parent="." unique_id=1226818767]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = 776.0
+offset_right = 1210.0
+offset_bottom = 824.0
+theme = ExtResource("3_7a7xl")
+text = "Therefore: Maybe the count is still alive and in "
+
+[node name="ConclusionLabel2" type="Label" parent="." unique_id=424427339]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = 824.0
+offset_right = 1210.0
+offset_bottom = 872.0
+theme = ExtResource("3_7a7xl")
+text = "the house with me..."
+
+[node name="Control2" type="Control" parent="." unique_id=1240971232]
+anchors_preset = 0
+offset_top = 48.0
+offset_right = 40.0
+offset_bottom = 104.0
+
+[node name="MadLib" parent="Control2" unique_id=317813038 instance=ExtResource("2_fdrd7")]
+custom_minimum_size = Vector2(25, 15)
+layout_mode = 0
+offset_left = 208.0
+offset_top = 72.0
+offset_right = 384.0
+offset_bottom = 168.0
+theme = ExtResource("3_7a7xl")
+text = "_______"
+
+[node name="Label2" type="Label" parent="Control2" unique_id=1466498559]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 72.0
+offset_right = 816.0
+offset_bottom = 120.0
+theme = ExtResource("3_7a7xl")
+text = "that I could find. "
+
+[node name="Label" type="Label" parent="Control2" unique_id=281666913]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 72.0
+offset_right = 240.0
+offset_bottom = 120.0
+theme = ExtResource("3_7a7xl")
+text = "was no "
+
+[node name="Label4" type="Label" parent="Control2" unique_id=804331602]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 16.0
+offset_right = 1188.0
+offset_bottom = 64.0
+theme = ExtResource("3_7a7xl")
+text = "This is a peculiar case. First of all, there "
+
+[connection signal="is_dragged" from="EvidenceCard" to="Control2/MadLib" method="_on_evidence_card_is_dragged"]
