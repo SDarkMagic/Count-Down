@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://btnupt5igcwd3"]
+[gd_scene format=3 uid="uid://rr6jg3tljlsv"]
 
 [ext_resource type="PackedScene" uid="uid://dot8ypsxcd6i4" path="res://ent/player.tscn" id="1_w5efk"]
 [ext_resource type="ArrayMesh" uid="uid://dmt7f4x43ork5" path="res://mdl/house.res" id="1_xyfw8"]
 [ext_resource type="PackedScene" uid="uid://dxvfigqbibg2e" path="res://mdl/house_model.res" id="3_anfwi"]
 [ext_resource type="PackedScene" uid="uid://cvf73phlb04kq" path="res://ent/herring.tscn" id="4_os6oa"]
-[ext_resource type="PackedScene" uid="uid://cdchb5qmvph22" path="res://ent/knife.tscn" id="5_58yxi"]
+[ext_resource type="PackedScene" path="res://ent/knife.tscn" id="5_58yxi"]
 [ext_resource type="PackedScene" uid="uid://d2ts7b735bpg4" path="res://ent/wine.tscn" id="6_tcd61"]
 [ext_resource type="PackedScene" uid="uid://brbpfnf52lmnq" path="res://ent/painting.tscn" id="7_b6cmg"]
 
@@ -212,3 +212,43 @@ bus = &"Music"
 
 [node name="Painting" parent="." unique_id=883618739 instance=ExtResource("7_b6cmg")]
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -51, 6.5, -29.3)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2000248932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3874464, 4.7402134, -58.39981)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=2087880558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.310685, 3.4083354, -48.8239)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1886615743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.848338, 4.502988, -58.172268)
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=1017247651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.11354, 3.5089746, -38.3385)
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=1540605108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3145924, 3.5089746, -38.3385)
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=652380730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.318783, 6.838502, -39.652466)
+light_specular = 0.05
+omni_range = 8.184586
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="." unique_id=1678058233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.948975, 6.838502, -40.953312)
+light_specular = 0.05
+omni_range = 8.184586
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="." unique_id=275206151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.569511, 6.838502, -38.71164)
+light_specular = 0.05
+omni_range = 8.184586
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="." unique_id=344637931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.91219, 6.838502, -30.225077)
+light_specular = 0.05
+omni_range = 8.184586
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="." unique_id=704467088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.07933, 6.838502, -30.3979)
+light_specular = 0.05
+omni_range = 8.184586
