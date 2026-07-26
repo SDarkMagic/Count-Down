@@ -25,6 +25,7 @@ var fov_change: float = 1.5
 
 func _ready() -> void:
 	camera.fov = base_fov
+	GlobalSignals.connect('hide_overlays', $Head/Camera3D/CanvasLayer.hide)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	%InteractShapecast3D.add_exception($".")
 
@@ -32,7 +33,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and not in_evidence:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(40))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-70), deg_to_rad(70))
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('open_evidence'):

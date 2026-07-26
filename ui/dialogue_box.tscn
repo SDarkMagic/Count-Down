@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dj66hh3gk5s47" path="res://script/dialogue_box.gd" id="1_2ix3t"]
 [ext_resource type="Texture2D" uid="uid://dtmvo0ubecyqt" path="res://ui/assets/dialogue_box.png" id="2_bode0"]
 [ext_resource type="Theme" uid="uid://bsawtooyh4tde" path="res://ui/evidence_board.theme" id="3_rcpb6"]
+[ext_resource type="FontFile" uid="uid://cs26utyo0y4tw" path="res://fnt/JimNightshade-Regular.ttf" id="4_iei5c"]
 
 [sub_resource type="Animation" id="Animation_bode0"]
 length = 0.001
@@ -198,6 +199,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -360.0
+offset_bottom = 86.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3
@@ -226,14 +228,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 145
-theme_override_constants/margin_top = 51
+theme_override_constants/margin_top = 103
 theme_override_constants/margin_right = 145
 theme_override_constants/margin_bottom = 55
 
 [node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/MarginContainer" unique_id=249747011]
 layout_mode = 2
 theme = ExtResource("3_rcpb6")
-text = "test dialogue"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=249828635]
+layout_mode = 2
+theme_override_constants/margin_left = 38
+theme_override_constants/margin_bottom = 290
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=98897684]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_iei5c")
+theme_override_font_sizes/font_size = 98
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=959226266]
 libraries/ = SubResource("AnimationLibrary_iei5c")

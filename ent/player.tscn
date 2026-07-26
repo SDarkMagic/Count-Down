@@ -4,11 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://tyfxpy7htrlr" path="res://ent/evidence_board.tscn" id="2_0xrom"]
 [ext_resource type="Shader" uid="uid://b5ptog53u0l54" path="res://addons/color-correction-and-screen-effects_ArseniyMirniy/Materials and Shaders/ScreenEffects_Ultimate.tres" id="3_wbaei"]
 [ext_resource type="Texture2D" uid="uid://bnn45uwfynrl5" path="res://addons/color-correction-and-screen-effects_ArseniyMirniy/Textures/noise_texture.tres" id="4_irdnn"]
+[ext_resource type="PackedScene" uid="uid://bu4de3hb67j3j" path="res://ui/clock.tscn" id="5_m2wci"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8m5ey"]
+height = 2.5
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0xrom"]
-points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4760704, 0.49888408, 0.16971254, 0.5591441, 0.46417162, 0.23105091, -0.8035912, 0.32045516, 0.40741014, 0.651043, -0.24352328, -0.4827893, 0.59484255, 0.082213186, -0.3628679, -0.68231165, 0.2896967, 0.46904355, -0.65452886, -0.06627126, -0.12744367, 0.8427015, -0.33810276, -0.39343542, -0.6839421, -0.24471663, 0.43825462, 0.62330925, 0.20084947, 0.0841477, 0.977454, 0.11479468, -0.06820232, -0.9764576, -0.12927033, 0.20054972, -0.56312895, -0.4514544, -0.18552664, 0.59545326, -0.4534751, -0.27336287, 0.59226835, 0.40775412, -0.0069364863, -0.47682306, 0.49966025, 0.37582088, -0.5886136, 0.31695515, 0.111579016, 0.5630594, -0.48117727, -0.41725034, 0.5278656, -0.27049688, -0.48454633, -0.59697217, -0.06650971, -0.27974695, 0.90856135, 0.05333608, -0.25019687, -0.8807117, 0.20531891, 0.263647, -0.90277094, -0.1273943, 0.29336792, 0.8715263, -0.15719566, 0.3734115, -0.5263189, -0.32824618, 0.4996626, 0.47664148, -0.0068885577, 0.053105574, 0.8750009, 0.32470253, -0.15454252, -0.5908538, 0.4658794, -0.09727988, -0.7823577, -0.39818847, -0.3876489, -0.49817133, 0.31564978, -0.30067965, -0.58799505, -0.38890144)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_irdnn"]
+points = PackedVector3Array(0.44234487, 0.92970383, 0.14467657, -0.4828813, -0.84705544, -0.07756784, -0.4432997, -0.8784623, -0.18691428, 0.36845455, -1.0051997, 0.21944752, -0.22402105, 0.84347725, 0.43613738, 0.069752455, 0.8484491, -0.48366928, 0.32437512, -0.8391602, -0.36890775, -0.41347644, 1.0047915, -0.11558338, -0.11449625, -0.8476823, 0.47529924, 0.17703433, 0.7243509, 0.46702576, -0.18691494, -0.87846553, -0.4433013, -0.15607549, -1.2176929, -0.080021866, 0.47161442, 0.8045029, -0.1501438, 0.14858845, 1.2212908, 0.072310105, -0.441745, -0.8390139, 0.21492015, -0.29217315, 0.79258835, -0.40041053, -0.47794655, 0.7654789, 0.14171422, 0.47379327, -0.8081887, 0.14287701, 0.3536, -0.71492654, 0.3536, 0.10898755, 1.1298972, -0.30524758, 0.44102523, -0.92695487, -0.15217352, 0.069752075, -0.84844476, -0.4836668, 0.28668016, 0.7993082, -0.4037717, -0.47697246, 0.7274425, -0.14935128, 0.14649668, -1.1670432, -0.22985731, -0.08019048, -1.2203926, 0.14847624, -0.11728029, 1.133461, 0.29826134, 0.10685642, -0.8499574, 0.47658557, 0.3977185, 0.8396702, 0.28804925, -0.19221003, 1.1677425, -0.19221003, -0.33256784, -0.8398151, 0.36125606, 0.1446014, 1.0035259, 0.40502414)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jgavj"]
 radius = 0.25
@@ -54,23 +56,26 @@ shader_parameter/Film_Grain = 0.6499999854712
 shader_parameter/Filter_Strenght = 0.0
 
 [node name="Player" type="CharacterBody3D" unique_id=609331952]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
 script = ExtResource("1_jgavj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1412099602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2857143, 0)
 mesh = SubResource("CapsuleMesh_8m5ey")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2136981661]
-shape = SubResource("ConvexPolygonShape3D_0xrom")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=784970328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2857143, 0)
+shape = SubResource("ConvexPolygonShape3D_irdnn")
 
 [node name="Head" type="Node3D" parent="." unique_id=676233425]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68146, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3957459, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1715762470]
 
 [node name="InteractShapecast3D" type="ShapeCast3D" parent="Head/Camera3D" unique_id=1643339965]
 unique_name_in_owner = true
 shape = SubResource("SphereShape3D_jgavj")
-target_position = Vector3(0, 0, -2)
+target_position = Vector3(0, 0, -3.5)
 max_results = 2
 collide_with_areas = true
 
@@ -89,3 +94,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Clock" parent="Head/Camera3D/CanvasLayer" unique_id=1909259188 instance=ExtResource("5_m2wci")]

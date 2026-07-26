@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bu4de3hb67j3j"]
+
+[ext_resource type="Texture2D" uid="uid://dcry2h8e4icsl" path="res://ui/assets/clock_foreground.png" id="1_f4i75"]
+[ext_resource type="Script" uid="uid://mmsw638k5qff" path="res://script/clock.gd" id="1_plrf7"]
+[ext_resource type="Texture2D" uid="uid://4wr3fosn7mwl" path="res://ui/assets/clock_face.png" id="2_50k3h"]
+[ext_resource type="Texture2D" uid="uid://bowcdlqivhxbm" path="res://ui/assets/clock_background.png" id="2_wy0fy"]
+[ext_resource type="Texture2D" uid="uid://b7288e5xf8mm1" path="res://ui/assets/clock_hand.png" id="3_plrf7"]
+
+[node name="Clock" type="Control" unique_id=1909259188]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -287.0
+grow_horizontal = 0
+mouse_filter = 2
+script = ExtResource("1_plrf7")
+
+[node name="ClockBackground" type="TextureRect" parent="." unique_id=1138231216]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138.5
+offset_right = 138.5
+offset_bottom = 304.0
+grow_horizontal = 2
+texture = ExtResource("2_wy0fy")
+
+[node name="ClockFace" type="TextureRect" parent="." unique_id=110056799]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -122.00006
+offset_top = 80.0
+offset_right = 95.99994
+offset_bottom = 297.0
+grow_horizontal = 2
+rotation = -3.8397243
+scale = Vector2(0.85, 0.85)
+pivot_offset = Vector2(112, 113)
+texture = ExtResource("2_50k3h")
+
+[node name="ClockHand" type="TextureRect" parent="." unique_id=1264146413]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.0
+offset_top = 15.0
+offset_right = 33.0
+offset_bottom = 153.0
+grow_horizontal = 2
+rotation = 3.1415927
+pivot_offset = Vector2(33, 79)
+texture = ExtResource("3_plrf7")
+
+[node name="ClockOverlay" type="TextureRect" parent="." unique_id=1185106890]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138.5
+offset_right = 138.5
+offset_bottom = 304.0
+grow_horizontal = 2
+texture = ExtResource("1_f4i75")
